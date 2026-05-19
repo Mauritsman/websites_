@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allora — Wijn &amp; Foodbar in Geel | Markt 14</title>
+<meta name="description" content="Allora: authentieke Italiaanse wijn- en foodbar op de Markt in Geel. Kleine wijnmakers uit Lombardije, handgemaakte gerechten. Bel voor een tafel: 0469 43 10 03.">
+<meta property="og:title" content="Allora — Wijn & Foodbar in Geel">
+<meta property="og:description" content="Proef en geniet — een stukje Italië in Geel.">
+<meta property="og:type" content="restaurant">
+<meta property="og:locale" content="nl_BE">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Allora — Wijn & Foodbar in Geel">
+<meta name="twitter:description" content="Proef en geniet — een stukje Italië in Geel.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["FoodEstablishment", "BarOrPub"],
+  "name": "Allora",
+  "description": "Authentieke Italiaanse wijn- en foodbar in Geel met kleine wijnmakers uit Lombardije en handgemaakte gerechten.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Markt 14",
+    "addressLocality": "Geel",
+    "postalCode": "2440",
+    "addressCountry": "BE"
+  },
+  "telephone": "+32469431003",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Sunday"],
+      "opens": "11:00",
+      "closes": "23:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Friday","Saturday"],
+      "opens": "11:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "32",
+    "bestRating": "5"
+  },
+  "sameAs": "https://www.facebook.com/p/Allorageel-61576335521715/",
+  "servesCuisine": "Italian",
+  "priceRange": "€€"
+}
+</script>
+
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --clr-base:    #0F0D0A;
+  --clr-surface: #1A1714;
+  --clr-gold:    #C8A96E;
+  --clr-accent:  #8B1A2E;
+  --clr-text:    #F0EAD6;
+  --clr-subtext: #9A9080;
+  --clr-border:  #2E2A24;
+  --ff-serif:    Georgia, 'Times New Roman', serif;
+  --ff-sans:     -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: var(--clr-base);
+  color: var(--clr-text);
+  font-family: var(--ff-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== SCROLL ANIMATION ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== STICKY HEADER ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15,13,10,0.97);
+  border-bottom: 1px solid var(--clr-border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: .75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.header-logo svg { width: 36px; height: 43px; }
+.header-logo-text {
+  font-family: var(--ff-serif);
+  font-size: .95rem;
+  letter-spacing: .18em;
+  color: var(--clr-text);
+  text-transform: uppercase;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.btn-bel {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: var(--clr-accent);
+  color: var(--clr-text);
+  text-decoration: none;
+  padding: .45rem .9rem;
+  border-radius: 2px;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  transition: background .2s;
+  white-space: nowrap;
+}
+.btn-bel:hover { background: #a31f37; }
+.btn-bel svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  padding: .3rem .65rem;
+  border-radius: 2px;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+.status-open    { background: rgba(60,120,60,.25); color: #7ec87e; border: 1px solid rgba(100,180,100,.3); }
+.status-sluit   { background: rgba(180,100,30,.25); color: #e0a060; border: 1px solid rgba(200,130,50,.3); }
+.status-gesloten{ background: rgba(100,60,60,.2);  color: var(--clr-subtext); border: 1px solid var(--clr-border); }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+
+/* ===== HERO ===== */
+#hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://raw.githubusercontent.com/Mauritsman/websites_/main/allora/images/Foppolo_landscape.png') center center / cover no-repeat;
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15,13,10,.4) 0%,
+    rgba(15,13,10,.7) 50%,
+    rgba(15,13,10,.92) 100%
+  );
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 780px;
+  padding: 2rem 1.5rem;
+}
+.hero-eyebrow {
+  font-size: .75rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1.25rem;
+}
+.hero-title {
+  font-family: var(--ff-serif);
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: normal;
+  line-height: 1.2;
+  color: var(--clr-text);
+  margin-bottom: 1.25rem;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--clr-gold);
+}
+.hero-sub {
+  font-size: clamp(.95rem, 2vw, 1.1rem);
+  color: var(--clr-subtext);
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.8;
+}
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--clr-gold);
+  color: var(--clr-base);
+  text-decoration: none;
+  padding: .75rem 1.75rem;
+  font-weight: 700;
+  font-size: .9rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background .2s, transform .15s;
+}
+.btn-primary:hover { background: #d4b87a; transform: translateY(-1px); }
+.btn-outline {
+  display: inline-block;
+  border: 1px solid var(--clr-gold);
+  color: var(--clr-gold);
+  text-decoration: none;
+  padding: .75rem 1.75rem;
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background .2s, color .2s;
+}
+.btn-outline:hover { background: var(--clr-gold); color: var(--clr-base); }
+
+/* ===== SECTION COMMON ===== */
+section { padding: 5rem 1.25rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-size: .72rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: .75rem;
+}
+.section-title {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: normal;
+  color: var(--clr-text);
+  margin-bottom: 2rem;
+  line-height: 1.25;
+}
+.divider {
+  width: 48px;
+  height: 1px;
+  background: var(--clr-gold);
+  margin-bottom: 2rem;
+}
+
+/* ===== OVER ONS ===== */
+#over-ons { background: var(--clr-base); }
+.over-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+@media (min-width: 768px) {
+  .over-grid { grid-template-columns: 3fr 2fr; }
+}
+.over-tekst-kolommen {
+  column-count: 1;
+  column-gap: 2.5rem;
+}
+@media (min-width: 900px) {
+  .over-tekst-kolommen { column-count: 2; }
+}
+.over-tekst-kolommen p {
+  color: var(--clr-text);
+  font-size: .975rem;
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+  break-inside: avoid;
+}
+.over-tekst-kolommen p:last-child { margin-bottom: 0; }
+.over-signature {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  color: var(--clr-gold);
+  margin-top: 1rem;
+}
+.pull-quote {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  color: var(--clr-gold);
+  line-height: 1.5;
+  border-left: 2px solid var(--clr-gold);
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+}
+.over-visueel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.over-logo-deco {
+  width: 120px;
+  height: auto;
+  opacity: .25;
+}
+.foto-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: var(--clr-surface);
+  border: 1px dashed var(--clr-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  color: var(--clr-gold);
+  border-radius: 2px;
+}
+.foto-placeholder .ph-icon { font-size: 2.5rem; opacity: .5; }
+.foto-placeholder .ph-label {
+  font-size: .7rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  opacity: .6;
+  text-align: center;
+  padding: 0 1rem;
+}
+.foto-placeholder-wide {
+  width: 100%;
+  aspect-ratio: 16/7;
+  background: var(--clr-surface);
+  border: 1px dashed var(--clr-gold);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  color: var(--clr-gold);
+  border-radius: 2px;
+}
+.foto-placeholder-wide .ph-icon { font-size: 2.5rem; opacity: .5; }
+.foto-placeholder-wide .ph-label {
+  font-size: .7rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  opacity: .6;
+}
+
+/* ===== MENU ===== */
+#menu { background: var(--clr-base); padding-top: 0; scroll-margin-top: 12px; }
+.menu-header-section {
+  text-align: center;
+  padding: 4rem 1.25rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.menu-subsection { margin-bottom: 0; }
+.menu-sub-header {
+  background: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-gold);
+  padding: 1.5rem 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.menu-sub-header h3 {
+  font-family: var(--ff-serif);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: normal;
+  color: var(--clr-text);
+  line-height: 1.2;
+}
+.menu-sub-header .sub-subtitle {
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--clr-subtext);
+  margin-top: .25rem;
+}
+.menu-cards {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .menu-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .menu-cards { grid-template-columns: repeat(3, 1fr); }
+}
+.menu-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 2px;
+  padding: 1.25rem 1.1rem;
+  position: relative;
+}
+.menu-card.featured {
+  border-color: var(--clr-gold);
+  background: #1e1a15;
+}
+.menu-card.featured::before {
+  content: '★';
+  position: absolute;
+  top: .6rem;
+  right: .8rem;
+  color: var(--clr-gold);
+  font-size: .75rem;
+  opacity: .8;
+}
+.menu-card-name {
+  font-family: var(--ff-serif);
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--clr-text);
+  margin-bottom: .4rem;
+  padding-right: 1.2rem;
+  line-height: 1.3;
+}
+.menu-card-desc {
+  font-size: .875rem;
+  color: var(--clr-subtext);
+  line-height: 1.7;
+}
+.dagprijs {
+  display: inline-block;
+  color: var(--clr-gold);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-top: .5rem;
+}
+.takeaway-banner {
+  max-width: 1100px;
+  margin: .5rem auto 0;
+  background: var(--clr-gold);
+  color: var(--clr-base);
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  font-size: .95rem;
+  letter-spacing: .06em;
+}
+
+/* ===== WIJNEN ===== */
+#wijnen {
+  background: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+.wijnen-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .wijnen-inner { grid-template-columns: 1fr 1fr; }
+}
+.wijnen-tekst .section-title { color: var(--clr-gold); }
+.wijnen-tekst p {
+  color: var(--clr-subtext);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+}
+.wijnen-tekst .btn-outline { margin-top: .5rem; }
+
+/* ===== REVIEWS ===== */
+#reviews { background: var(--clr-base); }
+.reviews-rating {
+  font-size: .8rem;
+  color: var(--clr-subtext);
+  letter-spacing: .12em;
+  margin-bottom: 2.5rem;
+}
+.reviews-rating strong { color: var(--clr-gold); }
+.review-link { color: var(--clr-subtext); text-decoration: none; transition: color .2s; }
+.review-link:hover { color: var(--clr-gold); }
+.review-link strong { color: var(--clr-gold); }
+.review-stars-link { text-decoration: none; display: inline-block; }
+.review-stars-link:hover .review-stars { opacity: .75; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) { .reviews-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+.review-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: 2px;
+  padding: 1.5rem;
+  position: relative;
+}
+.review-stars {
+  color: var(--clr-gold);
+  font-size: .85rem;
+  margin-bottom: .85rem;
+  letter-spacing: .1em;
+}
+.review-text {
+  font-size: .93rem;
+  color: var(--clr-text);
+  line-height: 1.75;
+  font-style: italic;
+}
+.review-source {
+  margin-top: 1rem;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--clr-subtext);
+}
+
+/* ===== PRAKTISCH ===== */
+#praktisch { background: var(--clr-surface); border-top: 1px solid var(--clr-border); }
+.praktisch-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+@media (min-width: 768px) { .praktisch-grid { grid-template-columns: 1fr 1fr; } }
+.uren-table { width: 100%; border-collapse: collapse; }
+.uren-table td {
+  padding: .6rem 0;
+  border-bottom: 1px solid var(--clr-border);
+  font-size: .9rem;
+  color: var(--clr-text);
+}
+.uren-table td:first-child { color: var(--clr-subtext); width: 45%; }
+.uren-table tr.gesloten td { color: var(--clr-border); }
+.uren-table tr.gesloten td:last-child {
+  color: var(--clr-accent);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.reserveer-tekst p {
+  color: var(--clr-subtext);
+  font-size: .95rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.reserveer-knoppen {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+@media (min-width: 480px) {
+  .reserveer-knoppen { flex-direction: row; flex-wrap: wrap; }
+}
+.btn-facebook {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: transparent;
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text);
+  text-decoration: none;
+  padding: .65rem 1.25rem;
+  border-radius: 2px;
+  font-size: .88rem;
+  font-weight: 600;
+  transition: border-color .2s, color .2s;
+}
+.btn-facebook:hover { border-color: var(--clr-gold); color: var(--clr-gold); }
+.adres-blok {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--clr-border);
+  font-size: .875rem;
+  color: var(--clr-subtext);
+  line-height: 1.7;
+}
+
+/* ===== LOCATIE ===== */
+#locatie { background: var(--clr-base); padding-top: 0; }
+.locatie-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+.locatie-route {
+  font-size: .875rem;
+  color: var(--clr-subtext);
+  margin-top: 1rem;
+  font-style: italic;
+}
+.map-wrap {
+  border: 1px solid var(--clr-border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: .5rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--clr-surface);
+  border-top: 1px solid var(--clr-border);
+  padding: 4rem 1.25rem 2.5rem;
+  text-align: center;
+}
+.footer-inner { max-width: 800px; margin: 0 auto; }
+.footer-logo { width: 90px; height: auto; margin: 0 auto 1.5rem; display: block; opacity: .9; }
+.footer-tagline {
+  font-size: .75rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1.75rem;
+}
+.footer-info {
+  font-size: .875rem;
+  color: var(--clr-subtext);
+  line-height: 2;
+}
+.footer-info a {
+  color: var(--clr-subtext);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-info a:hover { color: var(--clr-gold); }
+.footer-sep { color: var(--clr-border); margin: 0 .5rem; }
+.footer-copy {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--clr-border);
+  font-size: .75rem;
+  color: var(--clr-border);
+  letter-spacing: .08em;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== REUSABLE SVG LOGO ===== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="allora-logo" viewBox="0 0 110 132">
+      <!-- Circle -->
+      <circle cx="55" cy="54" r="50" fill="#F0EAD6" stroke="#0F0D0A" stroke-width="2.5"/>
+      <!-- Letter A -->
+      <path d="M55 18 L34 78 L42 78 L48 62 L62 62 L68 78 L76 78 Z M55 30 L60 58 L50 58 Z"
+            fill="#0F0D0A"/>
+      <!-- Wine glass (red) overlapping the A -->
+      <g fill="#8B1A2E">
+        <!-- bowl -->
+        <ellipse cx="55" cy="44" rx="11" ry="5" opacity=".95"/>
+        <path d="M44 44 Q44 60 55 65 Q66 60 66 44 Z"/>
+        <!-- stem -->
+        <rect x="53.5" y="65" width="3" height="12" rx="1"/>
+        <!-- base -->
+        <rect x="48" y="77" width="14" height="3" rx="1.5"/>
+      </g>
+      <!-- Two dots -->
+      <circle cx="39" cy="65" r="2.5" fill="#0F0D0A"/>
+      <circle cx="71" cy="65" r="2.5" fill="#0F0D0A"/>
+      <!-- ALLORA text -->
+      <text x="55" y="124"
+            font-family="Georgia, serif"
+            font-size="11"
+            font-weight="bold"
+            fill="#0F0D0A"
+            text-anchor="middle"
+            letter-spacing="4">ALLORA</text>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===== STICKY HEADER ===== -->
+<header role="banner">
+  <div class="header-inner">
+    <a href="#hero" class="header-logo" aria-label="Allora — terug naar boven">
+      <svg width="36" height="43" aria-hidden="true"><use href="#allora-logo"/></svg>
+      <span class="header-logo-text">Allora</span>
+    </a>
+    <div class="header-right">
+      <span id="status-badge" class="status-badge" aria-live="polite">
+        <span class="status-dot"></span>
+        <span id="status-text">Laden…</span>
+      </span>
+      <a href="tel:+32469431003" class="btn-bel" aria-label="Bel Allora: 0469 43 10 03">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M13.5 10.5c-.8-.1-1.6-.3-2.3-.6-.4-.2-.9-.1-1.2.2l-1 1c-1.5-.8-2.8-2.1-3.6-3.6l1-1c.3-.3.4-.8.2-1.2-.3-.7-.5-1.5-.6-2.3C5.9 2.4 5.3 2 4.7 2H2.5C1.8 2 1 2.6 1 3.5 1 9.9 6.1 15 12.5 15c.9 0 1.5-.8 1.5-1.5v-2.2c0-.6-.4-1.2-1-.8z"/>
+        </svg>
+        0469 43 10 03
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== 1. HERO ===== -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Markt 14 · Geel · Lombardije</p>
+    <h1 class="hero-title">Proef en geniet —<br><em>een stukje Italië in Geel.</em></h1>
+    <p class="hero-sub">Authentieke smaken uit Bergamo en Valtellina.<br>Geen pizza's. Wel het echte verhaal.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn-primary">Bekijk de kaart</a>
+      <a href="#praktisch" class="btn-outline">Reserveer</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 2. OVER ONS ===== -->
+<section id="over-ons" aria-labelledby="over-title">
+  <div class="section-inner">
+    <p class="section-label fade-in">Het verhaal</p>
+    <h2 id="over-title" class="section-title fade-in">Over ons</h2>
+    <div class="divider fade-in"></div>
+    <div class="over-grid">
+      <div class="over-tekst fade-in">
+        <div class="over-tekst-kolommen">
+          <p>Mijn naam is Alessandro en mijn verhaal begint in Foppolo, een klein bergdorpje verscholen in de stilte van de alpen, niet ver van Bergamo. Daar groeide ik op omringd door een cultuur waarbij eten en wijn niet zomaar tradities zijn maar een manier van leven. Al jong leerde ik de magie van een gedeelde maaltijd waarderen.</p>
+          <p>Veel van de wijnen die u hier proeft komen uit dezelfde streek als waar mijn roots liggen en uit Valtellina, net aan de andere kant van de bergen van Foppolo. Een betoverend dal in Lombardije waar de druiven rijpen in het ritme van de bergen. Daar worden met toewijding en ziel, wijnen geboren die mij diep raken en een stukje thuis met zich meedragen.</p>
+          <p>Na jaren in de horeca werken, waar ik heb mogen leren, proeven en groeien, wou ik zelf een plek creëren waar mijn liefde voor pure smaken en eerlijke wijnen samenkomt. Een plek om te delen, te ontdekken en vooral te genieten.</p>
+          <p>Wij werken vooral met kleine en toegewijde wijnmakers die hun land begrijpen en respecteren. Familiebedrijven die hun wijngaarden bewerken met geduld en respect. Ze volgen het ritme van de seizoenen, werken in harmonie met de natuur en blijven trouw aan traditie.</p>
+          <p>U vindt bij ons geen bekende labels of groots vertoon, maar pure wijnen die het karakter van hun herkomst weerspiegelen. Elk glas is een ontmoeting met mensen die hun ziel in elke fles leggen en die met liefde en aandacht de kunst van het wijnmaken voortzetten.</p>
+          <p>Proef en geniet, voel je welkom in het kleine stukje Italië dat we proberen naar Geel te brengen.</p>
+          <p class="over-signature">— Alessandro</p>
+        </div>
+        <blockquote class="pull-quote">"Een plek om te delen, te ontdekken en vooral te genieten."</blockquote>
+      </div>
+      <div class="over-visueel fade-in">
+        <svg class="over-logo-deco" viewBox="0 0 110 132" aria-hidden="true">
+          <use href="#allora-logo"/>
+        </svg>
+        <img src="https://raw.githubusercontent.com/Mauritsman/websites_/main/allora/images/uJEcymZ_d.png" alt="Het team van Allora — Alessandro, Federico en Zerha" style="width:100%;border-radius:2px;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. MENU ===== -->
+<section id="menu" aria-labelledby="menu-title">
+  <div class="menu-header-section fade-in">
+    <p class="section-label">De kaart</p>
+    <h2 id="menu-title" class="section-title">Onze menukaart</h2>
+    <div class="divider" style="margin:0 auto;"></div>
+  </div>
+
+  <!-- 4A: TAGLIERI DI CONDIVIDERE -->
+  <div class="menu-subsection" id="taglieri">
+    <div class="menu-sub-header fade-in">
+      <h3>Taglieri di condividere</h3>
+      <p class="sub-subtitle">Plankjes om te delen</p>
+    </div>
+    <div class="menu-cards">
+      <div class="menu-card featured fade-in">
+        <p class="menu-card-name">Tagliere selezione Alessandro</p>
+        <p class="menu-card-desc">Een exclusieve selectie van Alessandro's favoriete kazen (Roccolo, Stracchino antico, Casera en Strachitund) en vleeswaren (Crudo, Bresaola, Salame en Slinzega), vergezeld met confituur en vers brood.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Tagliere due valli</p>
+        <p class="menu-card-desc">Een plankje met vleeswaren (Pancetta, Speck, Cacciatore en Coppa) en kazen (Scimudin, Branzi fresco, Bitto en Gorgonzola malghese) die de smaken van Valtellina en Valle Brembana combineren, vergezeld met confituur en vers brood.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4B: PICCOLI TAGLIERI -->
+  <div class="menu-subsection" id="piccoli">
+    <div class="menu-sub-header fade-in">
+      <h3>Piccoli Taglieri</h3>
+      <p class="sub-subtitle">Kleinere plankjes</p>
+    </div>
+    <div class="menu-cards">
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Valtellinese</p>
+        <p class="menu-card-desc">Scimudin en Bitto Alta Valtellina kazen, vergezeld van authentieke Bresaola della Valtellina en Bondiola.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Bergamasco</p>
+        <p class="menu-card-desc">Stracchino Stagionato en Branzi Stravecchio kazen; Salame en Guanciale.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Maialino</p>
+        <p class="menu-card-desc">Coppa Gordona, Pancetta tesa en Cacciatore — drie vleeswaren van varken.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Verticale di Branzi</p>
+        <p class="menu-card-desc">Een bijzondere verticale proeverij van drie Branzi-kazen, elk met een eigen rijpingsgraad.</p>
+      </div>
+      <div class="menu-card featured fade-in">
+        <p class="menu-card-name">I Formaggi di Federico</p>
+        <p class="menu-card-desc">Degustatie van Federico's vijf favoriete kazen: Stracchino fresco, Agrì di Valtorta, Branzi Stagionato, Bitto Alta Valtellina en Blu di Capra.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Erborinati</p>
+        <p class="menu-card-desc">Een degustatiegplank van vier blauwe-schimmelkazen: Strachitunt, Blu di capra, Gorgonzola Malghese en Sciur Zola.</p>
+      </div>
+    </div>
+    <div class="takeaway-banner fade-in" role="note">★★ Al onze kazen en vleeswaren zijn ook mee te nemen ★★</div>
+  </div>
+
+  <!-- 4C: DA CONDIVIDERE -->
+  <div class="menu-subsection" id="da-condividere">
+    <div class="menu-sub-header fade-in">
+      <h3>Da condividere</h3>
+      <p class="sub-subtitle">Om samen van te genieten</p>
+    </div>
+    <div class="menu-cards">
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Insalata marinata</p>
+        <p class="menu-card-desc">Frisse savooikool met vinaigrette en gemarineerde Slinzega afgewerkt met geroosterde hazelnoten.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Paninotti <span style="font-weight:normal;font-size:.85em;color:var(--clr-subtext)">(5 st)</span></p>
+        <p class="menu-card-desc">Warme mini panino's met Branzi stagionato en onze zachte Salame.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Cavolo alla Valtellinese <span style="font-weight:normal;font-size:.85em;color:var(--clr-subtext)">(3 st)</span></p>
+        <p class="menu-card-desc">Rolletjes van savooikool gevuld met patatjes en Casera-kaas uit de oven.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Bombette di Parmigiano <span style="font-weight:normal;font-size:.85em;color:var(--clr-subtext)">(4 st)</span></p>
+        <p class="menu-card-desc">Gefrituurde smaakbommetjes van Parmigiano afgewerkt met gekarameliseerde ui en pesto van rucola.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Mini Parmigiana <span style="font-weight:normal;font-size:.85em;color:var(--clr-subtext)">(4 st)</span></p>
+        <p class="menu-card-desc">Torentjes van gefrituurde aubergines met tomatensaus en Formai de Mut.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Crocchette <span style="font-weight:normal;font-size:.85em;color:var(--clr-subtext)">(4 st)</span></p>
+        <p class="menu-card-desc">Krokant gefrituurde balletjes van spinazie met een hart van Stracchino fresco.</p>
+      </div>
+      <div class="menu-card featured fade-in">
+        <p class="menu-card-name">Bruschette</p>
+        <p class="menu-card-desc">Bruschette van de dag.</p>
+        <span class="dagprijs">Dagprijs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4D: SUGGESTIES — WARME GERECHTEN -->
+  <div class="menu-subsection" id="suggesties">
+    <div class="menu-sub-header fade-in">
+      <h3>Suggesties</h3>
+      <p class="sub-subtitle">Warme gerechten — tot 21u</p>
+    </div>
+    <div class="menu-cards">
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Vitello Tonnato</p>
+        <p class="menu-card-desc">Een klassiek Italiaans gerecht: kalfsgebraad met saus op basis van tonijn, ei en kappertjes.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Carpaccio di bresaola</p>
+        <p class="menu-card-desc">Carpaccio van Bresaola van de runderdij geserveerd met rucola, 24 maanden gerijpte Parmigiano en olijfolie Monte Tondo.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Pasta con melanzane</p>
+        <p class="menu-card-desc">Pasta met aubergines in witte wijn, Guanciale stagionato en afgewerkt met Parmigiano.</p>
+      </div>
+      <div class="menu-card featured fade-in">
+        <p class="menu-card-name">Casoncelli alla Bergamasca di Zerha</p>
+        <p class="menu-card-desc">Een klassieker uit de bergen; huisgemaakte ravioli gevuld met Salame Valchiavenna, gehakt en amaretti vergezeld door krokante pancetta arrotolata.</p>
+      </div>
+      <div class="menu-card fade-in">
+        <p class="menu-card-name">Scaloppina al formaggio</p>
+        <p class="menu-card-desc">Dun kalfsvlees met smeuïg gesmolten Formai de mut bovenop, vergezeld door een rucola slaatje met rode ajuin.</p>
+      </div>
+      <div class="menu-card featured fade-in">
+        <p class="menu-card-name">Suggestie Pasta</p>
+        <p class="menu-card-desc">Kijk op ons krijtbord of vraag aan Alessandro voor meer info.</p>
+        <span class="dagprijs">Dagprijs</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. WIJNEN ===== -->
+<section id="wijnen" aria-labelledby="wijnen-title">
+  <div class="wijnen-inner">
+    <div class="wijnen-tekst fade-in">
+      <p class="section-label">La cantina</p>
+      <h2 id="wijnen-title" class="section-title">Wijnen die je nergens anders vindt.</h2>
+      <div class="divider"></div>
+      <p>Wij werken met kleine toegewijde wijnmakers die hun wijngaarden bewerken met geduld en respect. Familiebedrijven die het ritme van de seizoenen volgen, in harmonie met de natuur werken en trouw blijven aan traditie.</p>
+      <p>Geen bekende labels of groots vertoon — pure wijnen die het karakter van hun herkomst weerspiegelen. Elk glas een ontmoeting met mensen die hun ziel in elke fles leggen.</p>
+      <span class="btn-outline" style="cursor:default;opacity:.75;">Wijnkaart beschikbaar in de zaak</span>
+    </div>
+    <div class="fade-in">
+      <img src="https://raw.githubusercontent.com/Mauritsman/websites_/main/allora/images/Allora-Geel-exterieur-630x420.png" alt="Wijnen bij Allora" style="width:100%;border-radius:2px;display:block;">
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. REVIEWS ===== -->
+<section id="reviews" aria-labelledby="reviews-title">
+  <div class="section-inner">
+    <p class="section-label fade-in">Wat gasten zeggen</p>
+    <h2 id="reviews-title" class="section-title fade-in">Google reviews</h2>
+    <p class="reviews-rating fade-in">
+      <a href="https://www.google.com/maps/search/Allora+Geel+Markt+14" target="_blank" rel="noopener noreferrer" class="review-link"><strong>★★★★★ 5.0/5</strong> op Google · 32 beoordelingen</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.tripadvisor.be/Restaurant_Review-g680682-d33956467-Reviews-Allora-Geel_Antwerp_Province.html" target="_blank" rel="noopener noreferrer" class="review-link">#12 van 146 in Geel op TripAdvisor</a>
+    </p>
+    <div class="reviews-grid">
+      <div class="review-card fade-in">
+        <a href="https://www.google.com/maps/search/Allora+Geel+Markt+14" target="_blank" rel="noopener noreferrer" class="review-stars-link" aria-label="Bekijk Google reviews van Allora"><p class="review-stars">★★★★★</p></a>
+        <p class="review-text">"Vriendelijke bediening, gezellig zitten. Warme sfeer. Grote kennis van de wijnen en de sharing gerechten zijn ruim voldoende. De gerechten kaart is beperkt. Maar moet niet meer zijn. De kwaliteit telt! Wij komen zeker terug!"</p>
+        <p class="review-source">Google · Marc Vennekens</p>
+      </div>
+      <div class="review-card fade-in">
+        <a href="https://www.google.com/maps/search/Allora+Geel+Markt+14" target="_blank" rel="noopener noreferrer" class="review-stars-link" aria-label="Bekijk Google reviews van Allora"><p class="review-stars">★★★★★</p></a>
+        <p class="review-text">"Niet zomaar een wijnbar met hapjes. Lekkere gerechten zoals pasta van de dag, uitgebreide sharing kaart. De wijnen zijn fenomenale toppers die nog weinig gekend zijn. Hier kan je dus uitgebreid tafelen met steeds een passend drankje erbij. Mooi ingericht met Italiaanse radio op de achtergrond zoals het hoort."</p>
+        <p class="review-source">Google · Mattijs Cauwenberghs</p>
+      </div>
+      <div class="review-card fade-in">
+        <a href="https://www.google.com/maps/search/Allora+Geel+Markt+14" target="_blank" rel="noopener noreferrer" class="review-stars-link" aria-label="Bekijk Google reviews van Allora"><p class="review-stars">★★★★★</p></a>
+        <p class="review-text">"Heel hartelijke bediening, kwaliteitsvolle producten waarvan ze met plezier de origine uitleggen. Sfeer is leuk met Italiaanse muziek en warme aankleding. Een aanrader!"</p>
+        <p class="review-source">Google · Jolien De Mesmaecker</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. PRAKTISCH + RESERVATIE ===== -->
+<section id="praktisch" aria-labelledby="praktisch-title">
+  <div class="section-inner">
+    <p class="section-label fade-in">Bezoek ons</p>
+    <h2 id="praktisch-title" class="section-title fade-in">Openingsuren &amp; reservatie</h2>
+    <div class="divider fade-in"></div>
+    <div class="praktisch-grid">
+      <div class="fade-in">
+        <table class="uren-table" aria-label="Openingsuren Allora">
+          <tbody>
+            <tr><td>Maandag</td><td>11u – 23u</td></tr>
+            <tr><td>Dinsdag</td><td>11u – 23u</td></tr>
+            <tr class="gesloten"><td>Woensdag</td><td>Gesloten</td></tr>
+            <tr class="gesloten"><td>Donderdag</td><td>Gesloten</td></tr>
+            <tr><td>Vrijdag</td><td>11u – middernacht</td></tr>
+            <tr><td>Zaterdag</td><td>11u – middernacht</td></tr>
+            <tr><td>Zondag</td><td>11u – 23u</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="reserveer-tekst fade-in">
+        <h3 class="section-title" style="font-size:1.5rem;margin-bottom:1rem;">Een tafel reserveren?</h3>
+        <p>Bel Alessandro of stuur een bericht via Facebook. Wij helpen je graag een moment te vinden.</p>
+        <div class="reserveer-knoppen">
+          <a href="tel:+32469431003" class="btn-bel" style="font-size:.9rem;padding:.65rem 1.25rem;">
+            <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">
+              <path d="M13.5 10.5c-.8-.1-1.6-.3-2.3-.6-.4-.2-.9-.1-1.2.2l-1 1c-1.5-.8-2.8-2.1-3.6-3.6l1-1c.3-.3.4-.8.2-1.2-.3-.7-.5-1.5-.6-2.3C5.9 2.4 5.3 2 4.7 2H2.5C1.8 2 1 2.6 1 3.5 1 9.9 6.1 15 12.5 15c.9 0 1.5-.8 1.5-1.5v-2.2c0-.6-.4-1.2-1-.8z"/>
+            </svg>
+            0469 43 10 03
+          </a>
+          <a href="https://www.facebook.com/p/Allorageel-61576335521715/" class="btn-facebook" target="_blank" rel="noopener noreferrer">
+            Facebook
+          </a>
+        </div>
+        <div class="adres-blok">
+          <strong style="color:var(--clr-text);display:block;margin-bottom:.25rem;">Allora</strong>
+          Markt 14, 2440 Geel<br>
+          Achter de Sint-Amandskerk<br>
+          Tussen café 't Bakhuis en restaurant Savour
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. LOCATIE ===== -->
+<section id="locatie" aria-labelledby="locatie-title" style="padding:0;">
+  <div class="locatie-inner">
+    <p class="section-label fade-in" style="padding-top:4rem;">Hoe kom je bij ons?</p>
+    <h2 id="locatie-title" class="section-title fade-in">Locatie</h2>
+    <div class="map-wrap fade-in">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=4.9882%2C51.1614%2C4.9922%2C51.1634&amp;layer=mapnik&amp;marker=51.16237%2C4.990217"
+        width="100%"
+        height="350"
+        loading="lazy"
+        title="Locatie Allora, Markt 14, Geel"
+        style="border:0;display:block;"
+        aria-label="OpenStreetMap kaart met de locatie van Allora op Markt 14 in Geel">
+      </iframe>
+    </div>
+    <p class="locatie-route fade-in">Markt 14, achter de Sint-Amandskerk. Tussen café 't Bakhuis en restaurant Savour.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <svg class="footer-logo" viewBox="0 0 110 132" aria-label="Allora logo">
+      <use href="#allora-logo"/>
+    </svg>
+    <p class="footer-tagline">Wijn · Food · Noord-Italië</p>
+    <div class="footer-info">
+      <span>Markt 14, 2440 Geel</span>
+      <span class="footer-sep">·</span>
+      <a href="tel:+32469431003">0469 43 10 03</a>
+      <br>
+      <span>Ma–Di &amp; Zo: 11–23u</span>
+      <span class="footer-sep">·</span>
+      <span>Vr–Za: 11u–middernacht</span>
+      <span class="footer-sep">·</span>
+      <span>Wo &amp; Do gesloten</span>
+      <br>
+      <a href="https://www.facebook.com/p/Allorageel-61576335521715/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </div>
+    <p class="footer-copy">&copy; <span id="copy-year"></span> Allora, Geel. Demo-site.</p>
+  </div>
+</footer>
+
+<script>
+/* ===== OPENING STATUS ===== */
+// Openingsuren per dag (0 = zondag, 1 = maandag, ..., 6 = zaterdag)
+// sluit: 24 = middernacht
+const uren = {
+  0: { open: true,  van: 11, sluit: 23 },  // zondag
+  1: { open: true,  van: 11, sluit: 23 },  // maandag
+  2: { open: true,  van: 11, sluit: 23 },  // dinsdag
+  3: { open: false },                        // woensdag GESLOTEN
+  4: { open: false },                        // donderdag GESLOTEN
+  5: { open: true,  van: 11, sluit: 24 },  // vrijdag
+  6: { open: true,  van: 11, sluit: 24 },  // zaterdag
+};
+
+// Testscenario's (uncomment één regel om te testen):
+// const now = new Date(2026, 4, 20, 14,  0); // Woensdag 14u    → Vandaag gesloten — morgen open om 11u
+// const now = new Date(2026, 4, 21, 20,  0); // Donderdag 20u   → Vandaag gesloten — vrijdag open om 11u
+// const now = new Date(2026, 4, 22, 23, 45); // Vrijdag 23u45   → Open — sluit binnen 30 min (oranje)
+// const now = new Date(2026, 4, 23, 23,  0); // Zaterdag 23u    → Nu open tot middernacht
+// const now = new Date(2026, 4, 24, 10,  0); // Zondag 10u      → Opent vandaag om 11u
+const now = new Date(); // Productie: gebruik echte tijd
+
+const dag = now.getDay();
+const uurDecimaal = now.getHours() + now.getMinutes() / 60;
+
+const dagNamen = ['zondag','maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag'];
+
+function volgendeOpendagInfo(vandaag) {
+  for (let i = 1; i <= 7; i++) {
+    const d = (vandaag + i) % 7;
+    if (uren[d] && uren[d].open) {
+      const naam = i === 1 ? 'morgen' : dagNamen[d];
+      return naam + ' open om 11u';
+    }
+  }
+  return 'binnenkort open';
+}
+
+function sluitDisplay(sluit) {
+  return sluit === 24 ? 'middernacht' : sluit + 'u';
+}
+
+const badge  = document.getElementById('status-badge');
+const tekst  = document.getElementById('status-text');
+const vandaag = uren[dag];
+
+if (!vandaag || !vandaag.open) {
+  badge.className = 'status-badge status-gesloten';
+  tekst.textContent = 'Vandaag gesloten — ' + volgendeOpendagInfo(dag);
+} else if (uurDecimaal < vandaag.van) {
+  badge.className = 'status-badge status-gesloten';
+  tekst.textContent = 'Opent vandaag om ' + vandaag.van + 'u';
+} else if (uurDecimaal >= vandaag.sluit) {
+  badge.className = 'status-badge status-gesloten';
+  tekst.textContent = 'Vandaag gesloten — ' + volgendeOpendagInfo(dag);
+} else {
+  const minutenTotSluit = (vandaag.sluit - uurDecimaal) * 60;
+  if (minutenTotSluit <= 30) {
+    badge.className = 'status-badge status-sluit';
+    tekst.textContent = 'Open — sluit binnen 30 min';
+  } else {
+    badge.className = 'status-badge status-open';
+    tekst.textContent = 'Nu open tot ' + sluitDisplay(vandaag.sluit);
+  }
+}
+
+/* ===== COPYRIGHT JAAR ===== */
+const yearEl = document.getElementById('copy-year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* ===== SCROLL FADE-IN ===== */
+const fadeEls = document.querySelectorAll('.fade-in');
+if ('IntersectionObserver' in window) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  fadeEls.forEach(el => obs.observe(el));
+} else {
+  fadeEls.forEach(el => el.classList.add('visible'));
+}
+</script>
+
+</body>
+</html>
