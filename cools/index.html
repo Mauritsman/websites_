@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boerderijwinkel Cools — Vers van de boerderij · Geel · Elke dag open 8u–20u</title>
+  <meta name="description" content="Boerderijwinkel Cools in Geel: elke dag open van 8u tot 20u, ook zon- en feestdagen. Aardappelen, groenten, fruit en lokale producten recht van de boerderij. Neerstraat 82, 2440 Geel. Tel. 014 54 72 10.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Boerderijwinkel Cools — Elke dag open van 8u tot 20u">
+  <meta property="og:description" content="Vers van de boerderij in Geel. Aardappelen, groenten, fruit, ijs, soep en lokale extra's. Elke dag open, ook zondag en feestdagen.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_BE">
+  <!-- [PLACEHOLDER: vervang door echte URL zodra site online staat]
+  <meta property="og:url" content="https://www.boerderijwinkelcools.be">
+  <meta property="og:image" content="https://www.boerderijwinkelcools.be/og-afbeelding.jpg">
+  -->
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "GroceryStore"],
+    "name": "Boerderijwinkel Cools",
+    "description": "Familiale hoevewinkel in Geel met vers aanbod van aardappelen, groenten, fruit en lokale producten. Elke dag open van 8u tot 20u.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Neerstraat 82",
+      "addressLocality": "Geel",
+      "postalCode": "2440",
+      "addressCountry": "BE",
+      "addressRegion": "Antwerpen"
+    },
+    "telephone": "+3214547210",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.1041,
+      "longitude": 4.9540
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "08:00",
+        "closes": "20:00"
+      }
+    ],
+    "currenciesAccepted": "EUR",
+    "paymentAccepted": "Cash",
+    "priceRange": "€"
+  }
+  </script>
+
+  <style>
+    /* ==========================================
+       CSS CUSTOM PROPERTIES
+       ========================================== */
+    :root {
+      --creme:        #F5EFE0;
+      --creme-donker: #EAE0C8;
+      --olijf:        #4A5D23;
+      --olijf-licht:  #5D7330;
+      --aarde:        #A0522D;
+      --aarde-donker: #8B4523;
+      --tekst:        #2C2A26;
+      --rand:         #D4C9A8;
+      --zacht-grijs:  #6A6255;
+    }
+
+    /* ==========================================
+       RESET & BASE
+       ========================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      color: var(--tekst);
+      background-color: var(--creme);
+      line-height: 1.65;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.2;
+      color: var(--olijf);
+    }
+
+    p { max-width: 68ch; }
+
+    a {
+      color: var(--olijf);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover { color: var(--aarde); }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ==========================================
+       LAYOUT
+       ========================================== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    .sectie-alt {
+      background-color: var(--creme-donker);
+    }
+
+    /* Subtiele papier-textuur via SVG-data-URI (geen externe dependency) */
+    .texture::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+      z-index: 0;
+    }
+
+    .texture {
+      position: relative;
+    }
+
+    .texture > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .sectie-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--aarde);
+      margin-bottom: 0.5rem;
+    }
+
+    .sectie-titel {
+      font-size: clamp(1.65rem, 4vw, 2.4rem);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ==========================================
+       PILL KNOPPEN
+       ========================================== */
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2.25rem;
+      border-radius: 9999px;
+      background-color: var(--olijf);
+      color: var(--creme);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.18s;
+      line-height: 1;
+    }
+    .btn:hover {
+      background-color: var(--olijf-licht);
+      color: var(--creme);
+    }
+
+    .btn-aarde {
+      background-color: var(--aarde);
+    }
+    .btn-aarde:hover {
+      background-color: var(--aarde-donker);
+    }
+
+    /* ==========================================
+       PLACEHOLDER-VELD (voor klant zichtbaar)
+       ========================================== */
+    .placeholder-veld {
+      background-color: #FFF8E8;
+      border: 2px dashed var(--aarde);
+      border-radius: 4px;
+      padding: 0.9rem 1.1rem;
+      color: var(--aarde);
+      font-style: italic;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    /* ==========================================
+       STICKY HEADER
+       ========================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background-color: var(--olijf);
+      color: var(--creme);
+      padding: 0.7rem 0;
+      border-bottom: 3px solid var(--aarde);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .header-logo {
+      font-family: Georgia, serif;
+      font-size: clamp(0.95rem, 2.8vw, 1.3rem);
+      font-weight: bold;
+      color: var(--creme);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .header-logo:hover { color: var(--creme); opacity: 0.9; }
+
+    .header-logo-img {
+      height: 42px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    #opening-status {
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.3rem 0.9rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .status-open {
+      background-color: rgba(255,255,255,0.12);
+      color: #C8E6A0;
+      border: 1px solid rgba(200,230,160,0.35);
+    }
+
+    .status-gesloten {
+      background-color: rgba(0,0,0,0.18);
+      color: var(--creme);
+      border: 1px solid rgba(245,239,224,0.25);
+    }
+
+    /* ==========================================
+       HERO
+       ========================================== */
+    .hero {
+      background-color: var(--creme);
+      padding: 4rem 0 3.5rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .hero-wenkbrauw {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--aarde);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 6vw, 3.3rem);
+      color: var(--olijf);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--tekst);
+      margin-bottom: 2rem;
+      max-width: 44ch;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      margin-top: 1.75rem;
+    }
+
+    .contact-rij {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.93rem;
+    }
+
+    .contact-rij a {
+      color: var(--tekst);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .contact-rij a:hover { color: var(--olijf); }
+
+    /* Foto-placeholder stijl */
+    .foto-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--creme-donker);
+      border: 2px dashed var(--rand);
+      border-radius: 6px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--aarde);
+      font-size: 0.82rem;
+      font-style: italic;
+      line-height: 1.5;
+      width: 100%;
+    }
+
+    .foto-placeholder .foto-icoon {
+      margin-bottom: 0.75rem;
+      font-style: normal;
+      color: var(--aarde);
+    }
+
+    .foto-placeholder .foto-icoon svg {
+      display: block;
+      overflow: visible;
+    }
+
+    .foto-placeholder strong {
+      display: block;
+      font-style: normal;
+      font-size: 0.85rem;
+      margin-bottom: 0.35rem;
+      color: var(--aarde-donker);
+    }
+
+    .foto-hero { aspect-ratio: 16 / 10; }
+    .foto-portret { aspect-ratio: 3 / 4; max-width: 300px; }
+
+    /* ==========================================
+       AANBOD GRID
+       ========================================== */
+    .aanbod-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 480px) {
+      .aanbod-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 768px) {
+      .aanbod-grid { gap: 1.5rem; }
+    }
+
+    .aanbod-kaart {
+      background-color: var(--creme);
+      border: 1px solid var(--rand);
+      border-radius: 6px;
+      padding: 1.5rem 1.1rem;
+      text-align: center;
+    }
+
+    .aanbod-emoji {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      height: 56px;
+      color: var(--olijf);
+    }
+
+    .aanbod-emoji svg {
+      display: block;
+      overflow: visible;
+    }
+
+    .aanbod-naam {
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--olijf);
+      margin-bottom: 0.3rem;
+    }
+
+    .aanbod-beschrijving {
+      font-size: 0.8rem;
+      color: var(--zacht-grijs);
+      line-height: 1.45;
+      max-width: 100%;
+    }
+
+    /* ==========================================
+       SEIZOENSKALENDER
+       ========================================== */
+    .kalender-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 2rem;
+      border: 1px solid var(--rand);
+      border-radius: 4px;
+    }
+
+    .kalender-scroll-hint {
+      font-size: 0.75rem;
+      color: var(--aarde);
+      text-align: center;
+      padding: 0.45rem 0.5rem;
+      background-color: var(--creme-donker);
+      border-bottom: 1px solid var(--rand);
+      letter-spacing: 0.03em;
+    }
+
+    @media (min-width: 768px) {
+      .kalender-scroll-hint { display: none; }
+    }
+
+    .kalender-tabel {
+      min-width: 680px;
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      background-color: var(--creme);
+    }
+
+    .kalender-tabel thead th {
+      background-color: var(--olijf);
+      color: var(--creme);
+      padding: 0.6rem 0.45rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.75rem;
+      border-right: 1px solid rgba(245,239,224,0.15);
+    }
+
+    .kalender-tabel thead th:first-child {
+      text-align: left;
+      min-width: 140px;
+      padding-left: 1rem;
+      border-right: 2px solid rgba(245,239,224,0.2);
+    }
+
+    .kalender-tabel tbody td {
+      padding: 0.55rem 0.45rem;
+      text-align: center;
+      border-bottom: 1px solid var(--rand);
+      border-right: 1px solid var(--rand);
+    }
+
+    .kalender-tabel tbody td:first-child {
+      text-align: left;
+      padding-left: 1rem;
+      font-weight: 600;
+      font-size: 0.8rem;
+      background-color: var(--creme-donker);
+      border-right: 2px solid var(--rand);
+      white-space: nowrap;
+    }
+
+    .kalender-tabel tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .kal-piek  { color: var(--olijf); font-weight: 800; font-size: 0.95rem; }
+    .kal-aan   { color: var(--olijf-licht); font-size: 0.9rem; }
+    .kal-off   { color: var(--rand); font-size: 0.75rem; }
+
+    .kalender-legende {
+      font-size: 0.77rem;
+      color: var(--zacht-grijs);
+      font-style: italic;
+      margin-top: 0.7rem;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ==========================================
+       OVER ONS
+       ========================================== */
+    .over-ons-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .over-ons-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .over-ons-tekst p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .over-ons-tekst p:last-child { margin-bottom: 0; }
+
+    /* ==========================================
+       PRAKTISCH
+       ========================================== */
+    .praktisch-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .praktisch-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .praktisch-blok h3 {
+      font-family: Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--olijf);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--rand);
+    }
+
+    .uren-tabel {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    .uren-tabel td {
+      padding: 0.32rem 0;
+      vertical-align: top;
+    }
+
+    .uren-tabel td:first-child {
+      font-weight: 600;
+      padding-right: 1rem;
+      color: var(--tekst);
+    }
+
+    .uren-tabel td:last-child {
+      color: var(--olijf);
+      font-weight: 600;
+    }
+
+    .cash-banner {
+      background-color: var(--olijf);
+      color: var(--creme);
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .cash-banner strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+      font-family: Georgia, serif;
+    }
+
+    .cash-banner p {
+      font-size: 0.83rem;
+      opacity: 0.9;
+      line-height: 1.55;
+      max-width: 100%;
+    }
+
+    .merode-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--olijf);
+    }
+
+    /* ==========================================
+       ROUTE
+       ========================================== */
+    .route-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .route-inner { grid-template-columns: 1fr 1fr; align-items: start; }
+    }
+
+    .kaart-wrap {
+      border: 1px solid var(--rand);
+      border-radius: 6px;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .kaart-wrap iframe {
+      width: 100%;
+      height: 340px;
+      border: none;
+      display: block;
+    }
+
+    .kaart-voetnoot {
+      font-size: 0.72rem;
+      padding: 0.4rem 0.8rem;
+      background: var(--creme-donker);
+      border-top: 1px solid var(--rand);
+      line-height: 1.4;
+    }
+
+    .route-lijst {
+      list-style: none;
+      padding: 0;
+    }
+
+    .route-item {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--rand);
+    }
+
+    .route-item:last-child { border-bottom: none; }
+
+    .route-vanuit {
+      font-weight: 700;
+      color: var(--olijf);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.25rem;
+    }
+
+    .route-tekst {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--tekst);
+      max-width: 100%;
+    }
+
+    /* ==========================================
+       FOOTER
+       ========================================== */
+    .site-footer {
+      background-color: var(--tekst);
+      color: var(--creme);
+      padding: 2.5rem 0 1.5rem;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .footer-logo {
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--creme);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .site-footer p,
+    .site-footer address {
+      font-size: 0.87rem;
+      font-style: normal;
+      line-height: 1.75;
+      opacity: 0.82;
+      max-width: 100%;
+    }
+
+    .site-footer a {
+      color: #C8D8A0;
+      text-decoration: underline;
+    }
+    .site-footer a:hover { color: var(--creme); }
+
+    .footer-kbo {
+      font-size: 0.73rem;
+      opacity: 0.45;
+      margin-top: 0.5rem;
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(245,239,224,0.12);
+      font-size: 0.72rem;
+      opacity: 0.42;
+      text-align: center;
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- SVG SPRITE — onzichtbaar, definieert alle icoontjes op de pagina -->
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+     style="position:absolute;width:0;height:0;overflow:hidden;pointer-events:none;">
+  <defs>
+
+    <!-- Aardappelen: organische blob met ogen -->
+    <symbol id="i-aardappel" viewBox="0 0 48 48">
+      <path d="M9 26C9 15 17 8 26 9.5C35 11 41 18 39 28C37 38 28 42 19 39C11 36 9 37 9 26Z"
+            stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="19" cy="22" r="1.8" fill="currentColor"/>
+      <circle cx="30" cy="24" r="1.8" fill="currentColor"/>
+      <circle cx="22" cy="32" r="1.8" fill="currentColor"/>
+    </symbol>
+
+    <!-- Groenten: wortel met bladtopjes -->
+    <symbol id="i-groenten" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 16L28 16L25.5 38Q24 43 22.5 38Z" stroke-width="1.8"/>
+        <line x1="21" y1="22" x2="27" y2="22" stroke-width="1.5"/>
+        <line x1="21.5" y1="29" x2="26.5" y2="29" stroke-width="1.5"/>
+        <path d="M22 16Q18 8 14 11" stroke-width="1.8"/>
+        <line x1="24" y1="16" x2="24" y2="9" stroke-width="1.8"/>
+        <path d="M26 16Q30 8 34 11" stroke-width="1.8"/>
+      </g>
+    </symbol>
+
+    <!-- Fruit: appel met steel en blad -->
+    <symbol id="i-fruit" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 19C22 19 14 19 11 27C8 35 13 43 20 43C22 43 23 41 24 41C25 41 26 43 28 43C35 43 40 35 37 27C34 19 26 19 24 19Z" stroke-width="1.8"/>
+        <path d="M20 19Q24 15 28 19" stroke-width="1.8"/>
+        <line x1="24" y1="15" x2="25" y2="10" stroke-width="1.8"/>
+        <path d="M25 12Q30 7 32 11Q27 14 25 12Z" stroke-width="1.8"/>
+      </g>
+    </symbol>
+
+    <!-- Ijs: wafelkegel met bol -->
+    <symbol id="i-ijs" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 27L24 44L31 27" stroke-width="1.8"/>
+        <line x1="18.5" y1="31" x2="29.5" y2="31" stroke-width="1.4"/>
+        <line x1="20" y1="35.5" x2="28" y2="35.5" stroke-width="1.4"/>
+        <line x1="21.5" y1="39.5" x2="26.5" y2="39.5" stroke-width="1.4"/>
+        <circle cx="24" cy="20" r="7" stroke-width="1.8"/>
+        <line x1="17" y1="27" x2="31" y2="27" stroke-width="1.8"/>
+      </g>
+    </symbol>
+
+    <!-- Soep: kom met stoomkringetjes -->
+    <symbol id="i-soep" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 28Q9 43 24 43Q39 43 39 28Z" stroke-width="1.8"/>
+        <line x1="9" y1="28" x2="39" y2="28" stroke-width="1.8"/>
+        <line x1="6" y1="43" x2="42" y2="43" stroke-width="1.8"/>
+        <path d="M17 22Q15 18 17 14" stroke-width="1.6"/>
+        <path d="M24 22Q22 18 24 14" stroke-width="1.6"/>
+        <path d="M31 22Q29 18 31 14" stroke-width="1.6"/>
+      </g>
+    </symbol>
+
+    <!-- Lokale extra's: weckpot -->
+    <symbol id="i-lokaal" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="13" y="20" width="22" height="23" rx="3" stroke-width="1.8"/>
+        <rect x="15" y="13" width="18" height="8" rx="2" stroke-width="1.8"/>
+        <line x1="13" y1="29" x2="35" y2="29" stroke-width="1.5"/>
+        <line x1="17" y1="35" x2="31" y2="35" stroke-width="1.4"/>
+        <line x1="17" y1="39" x2="31" y2="39" stroke-width="1.4"/>
+      </g>
+    </symbol>
+
+    <!-- Locatiepin -->
+    <symbol id="i-pin" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 44C24 44 10 31 10 21C10 13 16 7 24 7C32 7 38 13 38 21C38 31 24 44 24 44Z" stroke-width="1.8"/>
+        <circle cx="24" cy="21" r="5" stroke-width="1.8"/>
+      </g>
+    </symbol>
+
+    <!-- Klok -->
+    <symbol id="i-klok" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="24" cy="24" r="16" stroke-width="1.8"/>
+        <polyline points="24,13 24,24 31,29" stroke-width="2"/>
+      </g>
+    </symbol>
+
+    <!-- Cash: bankbiljet met euroteken -->
+    <symbol id="i-cash" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="14" width="38" height="22" rx="3" stroke-width="1.8"/>
+        <circle cx="24" cy="25" r="6" stroke-width="1.8"/>
+        <path d="M22.5 22Q28 20 28 25Q28 30 22.5 28" stroke-width="1.8"/>
+        <line x1="20" y1="24" x2="27" y2="24" stroke-width="1.5"/>
+        <line x1="20" y1="26.5" x2="27" y2="26.5" stroke-width="1.5"/>
+      </g>
+    </symbol>
+
+    <!-- Fiets -->
+    <symbol id="i-fiets" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="34" r="8" stroke-width="1.8"/>
+        <circle cx="36" cy="34" r="8" stroke-width="1.8"/>
+        <path d="M12 34L20 20L28 20" stroke-width="1.8"/>
+        <path d="M24 34L28 20L36 34" stroke-width="1.8"/>
+        <line x1="12" y1="34" x2="24" y2="34" stroke-width="1.8"/>
+        <path d="M28 20L33 15L37 16" stroke-width="1.8"/>
+        <line x1="20" y1="20" x2="24" y2="17" stroke-width="1.8"/>
+        <line x1="22" y1="17" x2="26" y2="17" stroke-width="1.8"/>
+      </g>
+    </symbol>
+
+    <!-- Camera -->
+    <symbol id="i-camera" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="16" width="38" height="27" rx="3" stroke-width="1.8"/>
+        <circle cx="24" cy="30" r="8" stroke-width="1.8"/>
+        <circle cx="24" cy="30" r="4" stroke-width="1.5"/>
+        <path d="M18 16L20 10L28 10L30 16" stroke-width="1.8"/>
+        <circle cx="38" cy="22" r="2" fill="currentColor" stroke="none"/>
+      </g>
+    </symbol>
+
+    <!-- Potlood (voor placeholder-markeringen) -->
+    <symbol id="i-potlood" viewBox="0 0 48 48">
+      <g stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M34 8L40 14L16 38L10 40L12 34Z" stroke-width="1.8"/>
+        <line x1="30" y1="12" x2="36" y2="18" stroke-width="1.5"/>
+      </g>
+    </symbol>
+
+  </defs>
+</svg>
+
+
+<!-- =====================================================
+     STICKY HEADER
+     ===================================================== -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#welkom" class="header-logo">
+        <img src="https://raw.githubusercontent.com/Mauritsman/websites_/main/cools/images/download.png" alt="" class="header-logo-img" aria-hidden="true">
+        Boerderijwinkel Cools
+      </a>
+      <span id="opening-status" class="status-open" aria-live="polite">Nu open &middot; sluit om 20u</span>
+    </div>
+  </div>
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+<section class="hero" id="welkom" aria-labelledby="hero-titel">
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="hero-content">
+        <span class="hero-wenkbrauw">Hoevewinkel &middot; Geel &middot; Neerstraat 82</span>
+        <h1 id="hero-titel">Elke dag open.<br>8u tot 20u.<br>Ook zondag.</h1>
+        <p class="hero-tagline">
+          Aardappelen, groenten en fruit recht van ons eigen veld &mdash; aangevuld met ijs, verse pasta, soep, honing en fruitsap van andere lokale producenten. Geen tussenhandel, gewoon eerlijk voedsel.
+        </p>
+        <a href="tel:014547210" class="btn">Bel ons: 014&nbsp;54&nbsp;72&nbsp;10</a>
+
+        <div class="hero-contact">
+          <div class="contact-rij">
+            <svg width="18" height="18" aria-hidden="true" style="stroke:currentColor;flex-shrink:0;overflow:visible;"><use href="#i-pin"/></svg>
+            <span>Neerstraat 82, 2440 Geel</span>
+          </div>
+          <div class="contact-rij">
+            <svg width="18" height="18" aria-hidden="true" style="stroke:currentColor;flex-shrink:0;overflow:visible;"><use href="#i-klok"/></svg>
+            <span>Ma &ndash; zo &bull; 8u &ndash; 20u &bull; ook feestdagen</span>
+          </div>
+          <div class="contact-rij">
+            <svg width="18" height="18" aria-hidden="true" style="stroke:currentColor;flex-shrink:0;overflow:visible;"><use href="#i-cash"/></svg>
+            <span><strong>Enkel cash betaling</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <!-- [PLACEHOLDER: vervang door foto van winkelinterieur of straataanzicht] -->
+        <div class="foto-placeholder foto-hero" role="img" aria-label="Fotoplek: winkelinterieur of straataanzicht">
+          <span class="foto-icoon" aria-hidden="true"><svg width="52" height="52" style="stroke:var(--aarde);overflow:visible;"><use href="#i-camera"/></svg></span>
+          <strong>Zet hier een foto van de winkel of het erf</strong>
+          Een mooie buitenkant of een blik naar binnen<br>
+          <em>Liggend formaat &middot; min.&nbsp;1200&nbsp;px breed</em>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     AANBOD GRID
+     ===================================================== -->
+<section class="sectie-alt texture" id="aanbod" aria-labelledby="aanbod-titel">
+  <div class="container">
+    <span class="sectie-label">Ons aanbod</span>
+    <h2 class="sectie-titel" id="aanbod-titel">Wat vindt u bij ons?</h2>
+    <p>Van het veld tot in uw mand &mdash; ons eigen aanbod, aangevuld met zorgvuldig gekozen producten van bekende lokale producenten uit de streek.</p>
+
+    <div class="aanbod-grid" role="list">
+
+      <article class="aanbod-kaart" role="listitem">
+        <span class="aanbod-emoji" aria-hidden="true"><svg width="48" height="48" style="overflow:visible;"><use href="#i-aardappel"/></svg></span>
+        <p class="aanbod-naam">Aardappelen</p>
+        <p class="aanbod-beschrijving">Nieuw en bewaar, eigen teelt. Verschillende rassen doorheen het jaar.</p>
+      </article>
+
+      <article class="aanbod-kaart" role="listitem">
+        <span class="aanbod-emoji" aria-hidden="true"><svg width="48" height="48" style="overflow:visible;"><use href="#i-groenten"/></svg></span>
+        <p class="aanbod-naam">Groenten</p>
+        <p class="aanbod-beschrijving">Seizoensgroenten rechtstreeks van het veld. Vers geplukt, dezelfde dag bij u thuis.</p>
+      </article>
+
+      <article class="aanbod-kaart" role="listitem">
+        <span class="aanbod-emoji" aria-hidden="true"><svg width="48" height="48" style="overflow:visible;"><use href="#i-fruit"/></svg></span>
+        <p class="aanbod-naam">Fruit</p>
+        <p class="aanbod-beschrijving">Zomerfruit, appels, peren &mdash; afhankelijk van het seizoen en de oogst.</p>
+      </article>
+
+      <article class="aanbod-kaart" role="listitem">
+        <span class="aanbod-emoji" aria-hidden="true"><svg width="48" height="48" style="overflow:visible;"><use href="#i-ijs"/></svg></span>
+        <p class="aanbod-naam">Ijs &amp; sorbet</p>
+        <p class="aanbod-beschrijving">Ambachtelijk ijs van een lokale producent. Bollen of bakken &mdash; in de zomermaanden.</p>
+      </article>
+
+      <article class="aanbod-kaart" role="listitem">
+        <span class="aanbod-emoji" aria-hidden="true"><svg width="48" height="48" style="overflow:visible;"><use href="#i-soep"/></svg></span>
+        <p class="aanbod-naam">Soep &amp; verse pasta</p>
+        <p class="aanbod-beschrijving">Kant-en-klare soep en verse pasta voor een snelle, eerlijke maaltijd. Het hele jaar door.</p>
+      </article>
+
+      <article class="aanbod-kaart" role="listitem">
+        <span class="aanbod-emoji" aria-hidden="true"><svg width="48" height="48" style="overflow:visible;"><use href="#i-lokaal"/></svg></span>
+        <p class="aanbod-naam">Lokale extra&#700;s</p>
+        <p class="aanbod-beschrijving">Honing, fruitsap en andere streekproducten &mdash; van producenten die we persoonlijk kennen.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     SEIZOENSKALENDER
+     ===================================================== -->
+<section id="seizoenen" aria-labelledby="kalender-titel">
+  <div class="container">
+    <span class="sectie-label">Wat is er wanneer?</span>
+    <h2 class="sectie-titel" id="kalender-titel">Seizoensoverzicht</h2>
+    <p>Een ruwe richtlijn van wat u doorgaans per maand bij ons kunt verwachten. Elk seizoen is anders &mdash; <strong>vraag gerust in de winkel</strong> wat er op dit moment vers is.</p>
+
+    <div class="kalender-wrapper" role="region" aria-label="Seizoensoverzicht, horizontaal scrollbaar op kleine schermen">
+      <div class="kalender-scroll-hint" aria-hidden="true">&#8592; Swipe om alle maanden te zien &#8594;</div>
+      <table class="kalender-tabel">
+        <caption class="sr-only">Seizoensoverzicht Boerderijwinkel Cools: welke producten zijn wanneer beschikbaar</caption>
+        <thead>
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Jan</th>
+            <th scope="col">Feb</th>
+            <th scope="col">Mrt</th>
+            <th scope="col">Apr</th>
+            <th scope="col">Mei</th>
+            <th scope="col">Jun</th>
+            <th scope="col">Jul</th>
+            <th scope="col">Aug</th>
+            <th scope="col">Sep</th>
+            <th scope="col">Okt</th>
+            <th scope="col">Nov</th>
+            <th scope="col">Dec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Aardappelen (nieuw)</th>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+          </tr>
+          <tr>
+            <th scope="row">Aardappelen (bewaar)</th>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+          </tr>
+          <tr>
+            <th scope="row">Groenten (seizoens)</th>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+          </tr>
+          <tr>
+            <th scope="row">Zomerfruit</th>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+          </tr>
+          <tr>
+            <th scope="row">Appels &amp; peren</th>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-aan">&#10003;</td>
+          </tr>
+          <tr>
+            <th scope="row">Ijs &amp; sorbet</th>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-piek">&#9733;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+            <td class="kal-off">&middot;</td>
+          </tr>
+          <tr>
+            <th scope="row">Soep &amp; verse pasta</th>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+          </tr>
+          <tr>
+            <th scope="row">Honing &amp; fruitsap</th>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+            <td class="kal-aan">&#10003;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="kalender-legende">
+      &#9733; Piekseizoen &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      &#10003; Beschikbaar &nbsp;&nbsp;&middot;&nbsp;&nbsp;
+      &middot; Niet van seizoen
+      <br>
+      <em>Dit is een richtlijn &mdash; vraag in de winkel wat er vandaag vers is. Het aanbod varieert met het seizoen en de oogst.</em>
+    </p>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     OVER ONS
+     ===================================================== -->
+<section class="sectie-alt" id="over-ons" aria-labelledby="over-titel">
+  <div class="container">
+    <div class="over-ons-inner">
+
+      <div class="over-ons-tekst">
+        <span class="sectie-label">Over ons</span>
+        <h2 class="sectie-titel" id="over-titel">Van het veld tot in uw mand</h2>
+
+        <!-- [PLACEHOLDER: klant vult hier het eigen familieverhaal in — verwijder dit kader en schrijf uw eigen tekst] -->
+        <div class="placeholder-veld">
+          <svg width="13" height="13" aria-hidden="true" style="stroke:currentColor;vertical-align:-1px;overflow:visible;display:inline-block;"><use href="#i-potlood"/></svg> <strong>Hier schrijf jij jullie verhaal.</strong><br><br>
+          Wanneer zijn jullie gestart? Wie staat er dagelijks in de winkel? Waarom elke dag open, ook zondag? Schrijf gewoon zoals je zou praten &mdash; 3 à 4 zinnen in je eigen woorden is meer dan genoeg.
+        </div>
+
+        <p>
+          Bij Boerderijwinkel Cools geloven we in eerlijk voedsel zonder omwegen. Wat u bij ons koopt, is afkomstig van ons eigen veld of van producenten die we persoonlijk kennen en vertrouwen. Geen grote distributiecentra, geen weken onderweg &mdash; gewoon vers.
+        </p>
+        <p>
+          We zijn trots lid van de <strong>Bezoek de Merode</strong>-route. Bent u een fietser die langs de streek rijdt? U bent van harte welkom, ook voor een kleine aankoop. Wij zijn er elke dag.
+        </p>
+      </div>
+
+      <div style="display:flex; justify-content:center;">
+        <!-- [PLACEHOLDER: vervang door portretfoto van de familie of een mooi shot van de boerderij] -->
+        <div class="foto-placeholder foto-portret" role="img" aria-label="Fotoplek: portret familie of boerderij">
+          <span class="foto-icoon" aria-hidden="true"><svg width="52" height="52" style="stroke:var(--aarde);overflow:visible;"><use href="#i-camera"/></svg></span>
+          <strong>Zet hier een foto van de familie of de boerderij</strong>
+          Een portret of een sfeershot van het erf<br>
+          <em>Staand formaat &middot; min.&nbsp;600&nbsp;px breed</em>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     PRAKTISCH
+     ===================================================== -->
+<section class="texture" id="praktisch" aria-labelledby="praktisch-titel">
+  <div class="container">
+    <span class="sectie-label">Praktische info</span>
+    <h2 class="sectie-titel" id="praktisch-titel">Alles wat u moet weten</h2>
+
+    <div class="praktisch-grid">
+
+      <!-- Openingsuren -->
+      <div class="praktisch-blok">
+        <h3>Openingsuren</h3>
+        <table class="uren-tabel" aria-label="Openingsuren per dag">
+          <tbody>
+            <tr><td>Maandag</td><td>8u &ndash; 20u</td></tr>
+            <tr><td>Dinsdag</td><td>8u &ndash; 20u</td></tr>
+            <tr><td>Woensdag</td><td>8u &ndash; 20u</td></tr>
+            <tr><td>Donderdag</td><td>8u &ndash; 20u</td></tr>
+            <tr><td>Vrijdag</td><td>8u &ndash; 20u</td></tr>
+            <tr><td>Zaterdag</td><td>8u &ndash; 20u</td></tr>
+            <tr><td>Zondag</td><td>8u &ndash; 20u</td></tr>
+            <tr><td>Feestdagen</td><td>8u &ndash; 20u</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:0.8rem; font-size:0.82rem; color:var(--aarde); font-weight:700;">
+          7 dagen op 7 &middot; 365 dagen per jaar
+        </p>
+      </div>
+
+      <!-- Bereikbaarheid & parking -->
+      <div class="praktisch-blok">
+        <h3>Bereikbaarheid</h3>
+        <address style="font-style:normal; font-size:0.92rem; line-height:1.7; margin-bottom:0.75rem;">
+          <strong>Adres</strong><br>
+          Neerstraat 82<br>
+          2440 Geel<br><br>
+          <strong>Telefoon</strong><br>
+          <a href="tel:014547210">014 54 72 10</a>
+        </address>
+
+        <!-- [PLACEHOLDER: klant vult parkeerinfo in] -->
+        <div class="placeholder-veld" style="margin-bottom:0.75rem;">
+          <svg width="13" height="13" aria-hidden="true" style="stroke:currentColor;vertical-align:-1px;overflow:visible;display:inline-block;"><use href="#i-potlood"/></svg> Vul hier de parkeerinfo in.<br>
+          Bv. &ldquo;Gratis parking langs de oprit, ruimte voor wagens en fietsen.&rdquo;
+        </div>
+
+        <a href="https://www.bezoekdemerode.be" target="_blank" rel="noopener noreferrer" class="merode-link">
+          <svg width="18" height="18" aria-hidden="true" style="stroke:currentColor;overflow:visible;"><use href="#i-fiets"/></svg> Bekijk de Bezoek de Merode-route &#8594;
+        </a>
+      </div>
+
+      <!-- Betaling -->
+      <div class="praktisch-blok">
+        <h3>Betaling</h3>
+        <div class="cash-banner">
+          <strong><svg width="20" height="20" aria-hidden="true" style="vertical-align:middle;margin-right:0.35rem;stroke:currentColor;overflow:visible;"><use href="#i-cash"/></svg>Enkel cash betaling</strong>
+          <p>
+            Wij aanvaarden geen Bancontact, Payconiq of andere betaalterminals. Breng voldoende cash mee.
+            In het centrum van Geel zijn bankautomaten beschikbaar.
+          </p>
+        </div>
+        <p style="font-size:0.82rem; color:var(--zacht-grijs); line-height:1.55; max-width:100%;">
+          We begrijpen dat dit voor sommige klanten minder handig is. Het is een bewuste keuze die ons toelaat klein, persoonlijk en eerlijk te blijven.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ROUTE
+     ===================================================== -->
+<section class="sectie-alt" id="route" aria-labelledby="route-titel">
+  <div class="container">
+    <span class="sectie-label">Hoe ons vinden?</span>
+    <h2 class="sectie-titel" id="route-titel">Route naar Neerstraat&nbsp;82</h2>
+
+    <div class="route-inner">
+
+      <div class="kaart-wrap">
+        <iframe
+          title="Kaart: locatie Boerderijwinkel Cools, Neerstraat 82, Geel"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=4.9340%2C51.0841%2C4.9740%2C51.1241&amp;layer=mapnik&amp;marker=51.1041%2C4.9540"
+          loading="lazy"
+          allowfullscreen
+        ></iframe>
+        <p class="kaart-voetnoot">
+          <a href="https://www.openstreetmap.org/?mlat=51.1041&amp;mlon=4.9540#map=15/51.1041/4.9540" target="_blank" rel="noopener noreferrer">
+            Vergroot de kaart op OpenStreetMap &#8599;
+          </a>
+          &nbsp;&middot;&nbsp; Kaartgegevens &copy; OpenStreetMap-bijdragers
+        </p>
+      </div>
+
+      <nav aria-label="Tekstroutes naar de winkel">
+        <h3 style="font-size:1.05rem; margin-bottom:1rem; color:var(--olijf); font-family:Georgia,serif;">Kom je langs?</h3>
+        <ul class="route-lijst">
+
+          <li class="route-item">
+            <div class="route-vanuit">Vanuit Oosterlo</div>
+            <!-- [PLACEHOLDER: klant vult tekstroute in] -->
+            <div class="placeholder-veld route-tekst">
+              <svg width="13" height="13" aria-hidden="true" style="stroke:currentColor;vertical-align:-1px;overflow:visible;display:inline-block;"><use href="#i-potlood"/></svg> Hoe kom je vanuit Oosterlo bij jullie? Schrijf de route op in je eigen woorden &mdash; straatnamen, een herkenbaar punt, hoe ver het rijden is.
+            </div>
+          </li>
+
+          <li class="route-item">
+            <div class="route-vanuit">Vanuit Zammel</div>
+            <!-- [PLACEHOLDER: klant vult tekstroute in] -->
+            <div class="placeholder-veld route-tekst">
+              <svg width="13" height="13" aria-hidden="true" style="stroke:currentColor;vertical-align:-1px;overflow:visible;display:inline-block;"><use href="#i-potlood"/></svg> Hoe kom je vanuit Zammel bij jullie? Bv. welke weg je volgt en wat je onderweg ziet.
+            </div>
+          </li>
+
+          <li class="route-item">
+            <div class="route-vanuit">Vanuit Geel-centrum</div>
+            <!-- [PLACEHOLDER: klant vult tekstroute in] -->
+            <div class="placeholder-veld route-tekst">
+              <svg width="13" height="13" aria-hidden="true" style="stroke:currentColor;vertical-align:-1px;overflow:visible;display:inline-block;"><use href="#i-potlood"/></svg> Hoe kom je vanuit het centrum van Geel bij jullie? Bv. vertrekpunt, welke richting je op rijdt, hoeveel minuten.
+            </div>
+          </li>
+
+          <li class="route-item">
+            <div class="route-vanuit">Vanuit Westerlo</div>
+            <!-- [PLACEHOLDER: klant vult tekstroute in] -->
+            <div class="placeholder-veld route-tekst">
+              <svg width="13" height="13" aria-hidden="true" style="stroke:currentColor;vertical-align:-1px;overflow:visible;display:inline-block;"><use href="#i-potlood"/></svg> Hoe kom je vanuit Westerlo bij jullie? Welke weg, welk kruispunt, iets herkenbaars in de buurt.
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="site-footer" id="contact" role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+
+      <div>
+        <span class="footer-logo">Boerderijwinkel Cools</span>
+        <p>Vers van de boerderij in Geel.<br>Elke dag open van 8u tot 20u.</p>
+        <!-- [PLACEHOLDER: vervang door echte KBO-nummer van de klant] -->
+        <p class="footer-kbo"><svg width="11" height="11" aria-hidden="true" style="stroke:currentColor;vertical-align:-1px;overflow:visible;display:inline-block;"><use href="#i-potlood"/></svg> KBO: BE&nbsp;0XXX.XXX.XXX &mdash; jouw nummer hier invullen</p>
+      </div>
+
+      <div>
+        <address>
+          <p><strong>Adres</strong><br>
+          Neerstraat 82<br>
+          2440 Geel</p>
+          <p style="margin-top:0.6rem;"><strong>Telefoon</strong><br>
+          <a href="tel:014547210">014 54 72 10</a></p>
+        </address>
+      </div>
+
+      <div>
+        <p><strong>Openingsuren</strong><br>
+        Elke dag &middot; 8u &ndash; 20u<br>
+        Ook zon- en feestdagen</p>
+        <p style="margin-top:0.6rem;"><strong>Betaling</strong><br>Enkel cash</p>
+        <p style="margin-top:0.6rem;">
+          <a href="https://www.bezoekdemerode.be" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" aria-hidden="true" style="stroke:currentColor;vertical-align:middle;overflow:visible;"><use href="#i-fiets"/></svg> Bezoek de Merode-route
+          </a>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      &copy; <span id="footer-jaar"></span> Boerderijwinkel Cools &mdash; Neerstraat 82, 2440 Geel
+    </div>
+  </div>
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+<script>
+  // --- Huidig jaar in footer ---
+  document.getElementById('footer-jaar').textContent = new Date().getFullYear();
+
+  // --- Openingsstatus (real-time) ---
+  //
+  // Boerderijwinkel Cools is ELKE dag open van 8u tot 20u,
+  // ook zon- en feestdagen. Er is geen gesloten dag in de week,
+  // dus enkel het uur bepaalt de status.
+  //
+  // Testscenario's:
+  //   Scenario 1 — willekeurige dag, uur = 9
+  //     → h >= 8 && h < 20  → "Nu open · sluit om 20u"
+  //   Scenario 2 — willekeurige dag, uur = 7
+  //     → h < 8              → "Vandaag open vanaf 8u"
+  //   Scenario 3 — willekeurige dag, uur = 21
+  //     → h >= 20            → "Nu gesloten · morgen weer open om 8u"
+
+  const OPEN_UUR  = 8;
+  const SLUIT_UUR = 20;
+
+  function updateOpeningsStatus() {
+    const uur = new Date().getHours();
+    const el  = document.getElementById('opening-status');
+
+    if (uur >= OPEN_UUR && uur < SLUIT_UUR) {
+      el.textContent = 'Nu open · sluit om ' + SLUIT_UUR + 'u';
+      el.className   = 'status-open';
+    } else if (uur < OPEN_UUR) {
+      el.textContent = 'Vandaag open vanaf ' + OPEN_UUR + 'u';
+      el.className   = 'status-gesloten';
+    } else {
+      el.textContent = 'Nu gesloten · morgen weer open om ' + OPEN_UUR + 'u';
+      el.className   = 'status-gesloten';
+    }
+  }
+
+  updateOpeningsStatus();
+  setInterval(updateOpeningsStatus, 60000); // hercheck elke minuut
+</script>
+
+</body>
+</html>
