@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Maurits Verboven — Professioneel webdesign voor lokale ondernemers in de regio Geel. Betaalbaar, snel en op maat.">
+  <title>Maurits Verboven — Webdesign voor lokale ondernemers</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: #1c2b3a;
+      background: #ffffff;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; }
+
+    /* ── TOKENS ── */
+    :root {
+      --blue:     #2563eb;
+      --blue-dk:  #1d4ed8;
+      --text:     #1c2b3a;
+      --muted:    #5a6a7a;
+      --bg-alt:   #f4f6f9;
+      --border:   #e0e5ed;
+      --nav-h:    62px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--nav-h);
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.25rem, 6vw, 4rem);
+      z-index: 999;
+    }
+
+    .nav-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-menu {
+      list-style: none;
+      display: flex;
+      gap: 2.5rem;
+    }
+
+    .nav-menu a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-menu a:hover { color: var(--blue); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.28s ease;
+    }
+
+    /* ── SHARED SECTION ── */
+    section {
+      padding: clamp(3.5rem, 8vw, 6rem) clamp(1.25rem, 6vw, 4rem);
+    }
+    .inner { max-width: 1080px; margin: 0 auto; }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 1.4rem;
+      line-height: 1.2;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100svh;
+      padding-top: calc(var(--nav-h) + clamp(3rem, 7vw, 5rem));
+      padding-bottom: clamp(3.5rem, 8vw, 6rem);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: clamp(2.5rem, 5vw, 5rem);
+    }
+
+    .photo-ring {
+      flex-shrink: 0;
+      position: relative;
+      width: clamp(130px, 18vw, 190px);
+      height: clamp(130px, 18vw, 190px);
+      border-radius: 50%;
+      background: #c0cdd9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .initials {
+      font-size: clamp(2.2rem, 4vw, 3.25rem);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      user-select: none;
+    }
+
+    #profielfoto {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      margin-bottom: 0.55rem;
+    }
+
+    .hero-tag {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-bio {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 460px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.925rem;
+      font-weight: 600;
+      padding: 0.75rem 1.8rem;
+      border-radius: 7px;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:hover { background: var(--blue-dk); transform: translateY(-1px); }
+
+    /* ── OVER MIJ ── */
+    #over-mij { background: var(--bg-alt); }
+
+    .about-body {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 650px;
+      line-height: 1.85;
+    }
+
+    /* ── PORTFOLIO ── */
+    #portfolio { background: #fff; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+      transition: box-shadow 0.25s, transform 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 10px 36px rgba(0,0,0,0.09);
+      transform: translateY(-4px);
+    }
+
+    .card-thumb {
+      display: block;
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      background: #dce4ef;
+    }
+
+    .card-body {
+      padding: 1.25rem 1.4rem 1.5rem;
+    }
+
+    .card-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.35rem;
+    }
+
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1.5px solid var(--blue);
+      color: var(--blue);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.5rem 1.2rem;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { background: var(--blue); color: #fff; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg-alt); }
+
+    .contact-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.25rem;
+      line-height: 1.75;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: var(--blue); }
+
+    .icon-box {
+      width: 42px;
+      height: 42px;
+      background: var(--blue);
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .contact-link:hover .icon-box { background: var(--blue-dk); }
+    .icon-box svg { width: 18px; height: 18px; fill: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text);
+      padding: 1.6rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.42);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 800px) {
+      .nav-menu {
+        position: fixed;
+        top: var(--nav-h);
+        inset-inline: 0;
+        background: #fff;
+        flex-direction: column;
+        padding: 1.5rem clamp(1.25rem, 6vw, 2rem);
+        gap: 1.3rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+        transform: translateY(-110%);
+        transition: transform 0.28s ease;
+        z-index: 998;
+      }
+      .nav-menu.open { transform: translateY(0); }
+      .nav-menu a { font-size: 1rem; }
+      .hamburger { display: flex; }
+
+      .hero-wrap { flex-direction: column; text-align: center; }
+      .hero-bio { margin: 0 auto 2rem; }
+
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 801px) and (max-width: 1024px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="nav-logo">Maurits Verboven</a>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#over-mij">Over mij</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-wrap">
+    <div class="photo-ring">
+      <span class="initials" aria-hidden="true">MV</span>
+      <img id="profielfoto" src="https://github.com/Mauritsman/websites_/blob/main/Maurits/iamges/Pfp.jpg?raw=true" alt="Maurits Verboven" onerror="this.remove()">
+    </div>
+    <div class="hero-content">
+      <h1>Maurits Verboven</h1>
+      <p class="hero-tag">Webdesign voor lokale ondernemers</p>
+      <p class="hero-bio">Ik ben een 17-jarige student uit Oosterlo met een achtergrond in technologische en bedrijfswetenschappen. Ik bouw professionele websites voor lokale bedrijven&nbsp;— snel, betaalbaar en op maat.</p>
+      <a href="#portfolio" class="btn">Bekijk mijn werk</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── OVER MIJ ── -->
+<section id="over-mij">
+  <div class="inner">
+    <p class="eyebrow">Over mij</p>
+    <h2 class="section-heading">Techniek én business</h2>
+    <p class="about-body">Na 4,5 jaar technologische wetenschappen studeer ik nu mijn laatste jaar bedrijfswetenschappen. Die combinatie geeft me een uniek perspectief: ik begrijp zowel de technische als de commerciële kant van een website. Ik bouw websites voor lokale ondernemers die online willen groeien&nbsp;— eerlijk, betaalbaar en met echte aandacht voor het resultaat.</p>
+  </div>
+</section>
+
+<!-- ── PORTFOLIO ── -->
+<section id="portfolio">
+  <div class="inner">
+    <p class="eyebrow">Portfolio</p>
+    <h2 class="section-heading">Mijn werk</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img class="card-thumb" src="https://raw.githubusercontent.com/Mauritsman/websites_/main/Maurits/iamges/Boer.png" alt="Boerderijwinkel Cools">
+        <div class="card-body">
+          <p class="card-name">Boerderijwinkel Cools</p>
+          <p class="card-desc">Lokale boerderijwinkel in Oosterlo</p>
+          <a href="https://boerderijwinkel-cools.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-outline">Bekijk site</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-thumb" src="https://raw.githubusercontent.com/Mauritsman/websites_/main/Maurits/iamges/Alloea.png" alt="Allora Wijn &amp; Foodbar">
+        <div class="card-body">
+          <p class="card-name">Allora Wijn &amp; Foodbar</p>
+          <p class="card-desc">Italiaanse wijnbar in Geel</p>
+          <a href="https://allora-geel.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-outline">Bekijk site</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-thumb" src="https://raw.githubusercontent.com/Mauritsman/websites_/main/Maurits/iamges/Friet%20%26%20Zo.png" alt="Friet &amp; Zo">
+        <div class="card-body">
+          <p class="card-name">Friet &amp; Zo</p>
+          <p class="card-desc">Frituur in Zammel, Geel</p>
+          <a href="https://friet-en-zo.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-outline">Bekijk site</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="inner">
+    <p class="eyebrow">Contact</p>
+    <h2 class="section-heading">Samenwerken?</h2>
+    <p class="contact-sub">Neem gerust contact op&nbsp;— ik reageer snel.</p>
+    <div class="contact-list">
+
+      <a href="mailto:mauritsverboven@hotmail.com" class="contact-link">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
+        mauritsverboven@hotmail.com
+      </a>
+
+      <a href="tel:+32467097324" class="contact-link">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+        </div>
+        0467&nbsp;09&nbsp;73&nbsp;24
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>&copy; <span id="yr"></span> Maurits Verboven &mdash; Webdesign voor lokale ondernemers</p>
+</footer>
+
+<script>
+  // Dynamic copyright year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('navMenu');
+
+  function openMenu()  { navMenu.classList.add('open');    hamburger.setAttribute('aria-expanded', 'true');  }
+  function closeMenu() { navMenu.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); }
+  function toggleMenu(){ navMenu.classList.contains('open') ? closeMenu() : openMenu(); }
+
+  hamburger.addEventListener('click', toggleMenu);
+
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  document.addEventListener('click', e => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) closeMenu();
+  });
+
+  // Active nav highlight on scroll
+  const sections  = document.querySelectorAll('section[id]');
+  const navLinks  = document.querySelectorAll('.nav-menu a');
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY + 80;
+    sections.forEach(sec => {
+      if (y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + sec.id ? 'var(--blue)' : '';
+        });
+      }
+    });
+  }, { passive: true });
+</script>
+
+</body>
+</html>
