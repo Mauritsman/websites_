@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sfeer &amp; Beleving — Allora Geel</title>
+<meta name="description" content="Een kijkje in Allora, het kleine stukje Italië in Geel. Foto's van onze zaak, gerechten, wijnen en de sfeer.">
+<link rel="icon" type="image/png" href="images/logo-icoon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{--base:#0d0d0d;--surface:#161412;--surface-2:#1c1916;--gold:#c9a84c;--gold-soft:#d8bd6e;--red:#8b1a1a;--red-hover:#a52121;--green:#1f7a3d;--green-hover:#249147;--text:#f2ece0;--subtext:#a89f8d;--border:#2a2722;--ff-serif:'Playfair Display',Georgia,serif;--ff-sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+body{background:var(--base);color:var(--text);font-family:var(--ff-sans);font-size:16px;line-height:1.7;overflow-x:hidden;}
+img{max-width:100%;display:block;}a{color:inherit;}
+.fade-in{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.site-header{position:fixed;top:0;left:0;width:100%;z-index:1000;transition:background .35s ease,box-shadow .35s ease,padding .35s ease;padding:.4rem 0;}
+.site-header.scrolled{background:#0d0d0d;box-shadow:0 4px 24px rgba(0,0,0,.45);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:.55rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;}
+.nav-logo img{height:48px;width:auto;filter:brightness(0) invert(1);transition:height .35s ease;}
+.scrolled .nav-logo img{height:48px;}
+@media(max-width:860px){.nav-logo img,.scrolled .nav-logo img{height:38px;}}
+.nav-links{display:flex;align-items:center;gap:1.75rem;}
+.nav-links a{font-size:.9rem;letter-spacing:.04em;text-decoration:none;color:var(--text);transition:color .2s;white-space:nowrap;}
+.nav-links a:hover{color:var(--gold);}.nav-links a.active{color:var(--gold);}
+.nav-wa{display:inline-flex !important;align-items:center;gap:.45rem;background:var(--red);color:#fff !important;padding:.5rem 1.1rem;border-radius:3px;font-weight:600;}
+.nav-wa:hover{background:var(--red-hover);color:#fff !important;}.nav-wa svg{width:16px;height:16px;}
+.nav-actions{display:flex;align-items:center;gap:.75rem;}
+.nav-links{margin-left:auto;}
+.nav-status{display:inline-flex;align-items:center;gap:.45rem;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding:.34rem .7rem;border-radius:3px;border:1px solid var(--border);}
+.nav-status .status-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.nav-status.open{color:#5fc27e;border-color:rgba(95,194,126,.4);background:rgba(95,194,126,.08);}
+.nav-status.open .status-dot{background:#5fc27e;animation:statusPulse 2s ease-in-out infinite;}
+.nav-status.closed{color:#d9605f;border-color:rgba(217,96,95,.35);background:rgba(217,96,95,.07);}
+.nav-status.closed .status-dot{background:#d9605f;}
+@keyframes statusPulse{0%{box-shadow:0 0 0 0 rgba(95,194,126,.55);}70%{box-shadow:0 0 0 5px rgba(95,194,126,0);}100%{box-shadow:0 0 0 0 rgba(95,194,126,0);}}
+@media(max-width:860px){.nav-actions{gap:.55rem;}.nav-status{font-size:.6rem;padding:.3rem .55rem;}.nav-wa{padding:.45rem .8rem;margin-top:0;}}
+.nav-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:8px;z-index:1100;}
+.nav-toggle span{display:block;height:2px;width:100%;background:var(--text);border-radius:2px;transition:transform .3s ease,opacity .3s ease;}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+@media(max-width:860px){.nav-toggle{display:flex;}.nav-links{position:fixed;top:0;right:0;height:100vh;width:min(80vw,320px);background:#0d0d0d;flex-direction:column;align-items:flex-start;justify-content:center;gap:1.6rem;padding:2rem 2.25rem;transform:translateX(100%);transition:transform .35s ease;box-shadow:-8px 0 32px rgba(0,0,0,.5);}.nav-links.open{transform:translateX(0);}.nav-links a{font-size:1.1rem;}.nav-wa{margin-top:.5rem;}}
+.hero-sm{position:relative;padding:11rem 1.5rem 5rem;text-align:center;background:linear-gradient(180deg,#161412 0%,#0d0d0d 100%);border-bottom:1px solid var(--border);overflow:hidden;}
+.hero-sm::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(201,168,76,.08),transparent 60%);}
+.hero-sm-inner{position:relative;z-index:2;max-width:720px;margin:0 auto;}
+.hero-sm h1{font-family:var(--ff-serif);font-weight:500;font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin-bottom:1rem;}
+.hero-sm p{color:var(--subtext);font-size:clamp(1rem,2vw,1.15rem);max-width:560px;margin:0 auto;}
+section{padding:5rem 1.25rem;}
+/* GALLERY */
+.gallery{max-width:1200px;margin:0 auto;column-count:3;column-gap:12px;}
+@media(max-width:900px){.gallery{column-count:2;}}
+@media(max-width:560px){.gallery{column-count:1;}}
+.gallery-item{position:relative;break-inside:avoid;margin-bottom:12px;border-radius:4px;overflow:hidden;cursor:pointer;background:var(--surface);transition:transform .3s ease;}
+.gallery-item img{width:100%;height:auto;display:block;}
+.gallery-item::after{content:'';position:absolute;inset:0;background:rgba(201,168,76,.12);opacity:0;transition:opacity .3s ease;}
+.gallery-item:hover{transform:scale(1.02);}
+.gallery-item:hover::after{opacity:1;}
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;z-index:2000;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease;}
+.lightbox.open{opacity:1;visibility:visible;}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.lb-btn{position:absolute;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;width:52px;height:52px;border-radius:50%;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;user-select:none;}
+.lb-btn:hover{background:rgba(201,168,76,.35);}
+.lb-close{top:1.5rem;right:1.5rem;width:46px;height:46px;font-size:1.3rem;}
+.lb-prev{left:1.5rem;top:50%;transform:translateY(-50%);}
+.lb-next{right:1.5rem;top:50%;transform:translateY(-50%);}
+@media(max-width:560px){.lb-prev{left:.5rem;}.lb-next{right:.5rem;}.lb-btn{width:44px;height:44px;}}
+.site-footer{background:#0a0a0a;border-top:1px solid var(--border);padding:3.5rem 1.25rem 2rem;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;text-align:center;}
+@media(min-width:760px){.footer-grid{grid-template-columns:1fr 1fr 1fr;text-align:left;align-items:start;}}
+.footer-logo{height:60px;width:auto;filter:brightness(0) invert(1);margin:0 auto;}
+@media(min-width:760px){.footer-logo{margin:0;}}
+.footer-col h4{font-family:var(--ff-serif);color:var(--gold);font-weight:500;font-size:1.05rem;margin-bottom:.9rem;}
+.footer-col p,.footer-col a{color:var(--subtext);font-size:.9rem;text-decoration:none;line-height:1.9;}
+.footer-col a:hover{color:var(--gold);}
+.footer-uren span{display:block;color:var(--subtext);font-size:.85rem;line-height:1.8;}
+.footer-socials{display:flex;gap:.9rem;justify-content:center;margin-top:.4rem;}
+@media(min-width:760px){.footer-socials{justify-content:flex-start;}}
+.footer-socials a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--border);border-radius:50%;transition:all .25s;}
+.footer-socials a:hover{border-color:var(--gold);background:var(--gold);}
+.footer-socials svg{width:18px;height:18px;fill:var(--subtext);transition:fill .25s;}
+.footer-socials a:hover svg{fill:var(--base);}
+.footer-copy{text-align:center;margin-top:3rem;padding-top:1.75rem;border-top:1px solid var(--border);color:#555;font-size:.78rem;letter-spacing:.06em;}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Allora home"><img src="images/logo-tekst.png" alt="Allora"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu &amp; Wijnkaart</a>
+      <a href="takeaway.html">Take Away</a>
+      <a href="fotos.html" class="active">Foto's</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <span class="nav-status" id="navStatus"><span class="status-dot"></span><span class="status-text">Gesloten</span></span>
+      <a href="https://wa.me/32469431003" target="_blank" rel="noopener noreferrer" class="nav-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.738-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        WhatsApp
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero-sm">
+  <div class="hero-sm-inner">
+    <h1>Sfeer &amp; Beleving</h1>
+    <p>Een kijkje in het kleine stukje Italië in Geel</p>
+  </div>
+</section>
+
+<section style="background:var(--base);">
+  <div class="gallery" id="gallery">
+    <div class="gallery-item" data-src="images/fotos/Eerste foto.jpg"><img src="images/fotos/Eerste foto.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 1" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/Tweede Foto.jpg"><img src="images/fotos/Tweede Foto.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 2" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/Derde foto.jpg"><img src="images/fotos/Derde foto.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 3" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/Vierde foto.jpg"><img src="images/fotos/Vierde foto.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 4" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/Vijfde.jpg"><img src="images/fotos/Vijfde.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 5" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/Zesde foto.jpg"><img src="images/fotos/Zesde foto.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 6" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/Zevende.jpg"><img src="images/fotos/Zevende.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 7" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/0ste.jpg"><img src="images/fotos/0ste.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 8" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/9de.jpg"><img src="images/fotos/9de.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 9" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/Achstste.jpg"><img src="images/fotos/Achstste.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 10" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/0a4ebdef-8720-4d59-a4e2-d441f1d9eaca.jpg"><img src="images/fotos/0a4ebdef-8720-4d59-a4e2-d441f1d9eaca.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 11" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/0bd229e1-69e2-4789-a998-53915b976812.jpg"><img src="images/fotos/0bd229e1-69e2-4789-a998-53915b976812.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 12" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/1db0f738-7312-45d4-b720-facbadb2db48.jpg"><img src="images/fotos/1db0f738-7312-45d4-b720-facbadb2db48.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 13" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/2631dd58-2cab-44a9-8901-6c2ccb3e25e9.jpg"><img src="images/fotos/2631dd58-2cab-44a9-8901-6c2ccb3e25e9.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 14" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/297f9225-6873-431e-8fc0-e67abfa96030.jpg"><img src="images/fotos/297f9225-6873-431e-8fc0-e67abfa96030.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 15" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/4092556e-59aa-498f-97a9-57729677b332.jpg"><img src="images/fotos/4092556e-59aa-498f-97a9-57729677b332.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 16" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/425cd6c8-2754-46b2-816a-5d44ac1ca067.jpg"><img src="images/fotos/425cd6c8-2754-46b2-816a-5d44ac1ca067.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 17" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/4ed1dd7d-5a3d-47da-8bca-80c17be76ff3.jpg"><img src="images/fotos/4ed1dd7d-5a3d-47da-8bca-80c17be76ff3.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 18" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/508a773e-457a-49b2-9765-9e7df9462598.jpg"><img src="images/fotos/508a773e-457a-49b2-9765-9e7df9462598.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 19" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/5e6fad82-a8d9-4672-8d47-ffb00b35f445.jpg"><img src="images/fotos/5e6fad82-a8d9-4672-8d47-ffb00b35f445.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 20" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/64dc8bdb-d665-47f5-9700-e67f93cd8a41.jpg"><img src="images/fotos/64dc8bdb-d665-47f5-9700-e67f93cd8a41.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 21" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/71a8aae5-8ebd-4f56-ad65-fc7a02d3f517.jpg"><img src="images/fotos/71a8aae5-8ebd-4f56-ad65-fc7a02d3f517.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 22" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/74478257-f349-4e41-8d3b-339a7d2b6a6d.jpg"><img src="images/fotos/74478257-f349-4e41-8d3b-339a7d2b6a6d.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 23" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/7694d49f-4a6a-4898-962f-d90e3e71cf5b.jpg"><img src="images/fotos/7694d49f-4a6a-4898-962f-d90e3e71cf5b.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 24" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/942943e2-7e32-4bcc-9933-94a0c53c433c.jpg"><img src="images/fotos/942943e2-7e32-4bcc-9933-94a0c53c433c.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 25" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/9c534264-a23e-47f1-baab-fb2be23b3ddc.jpg"><img src="images/fotos/9c534264-a23e-47f1-baab-fb2be23b3ddc.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 26" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/9f5fa786-7993-4958-84ce-ea762fe6859d.jpg"><img src="images/fotos/9f5fa786-7993-4958-84ce-ea762fe6859d.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 27" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/9fd27ab0-b4e7-42d1-af40-71fb09133122.jpg"><img src="images/fotos/9fd27ab0-b4e7-42d1-af40-71fb09133122.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 28" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/a5beba19-e39f-4dba-ad0e-028c5d82ce3d.jpg"><img src="images/fotos/a5beba19-e39f-4dba-ad0e-028c5d82ce3d.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 29" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/ad16288d-bb82-4102-bd54-845b23c18c43.jpg"><img src="images/fotos/ad16288d-bb82-4102-bd54-845b23c18c43.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 30" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/b7df6104-339b-40f6-aaaf-6cc412c0f1c1.jpg"><img src="images/fotos/b7df6104-339b-40f6-aaaf-6cc412c0f1c1.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 31" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/bdc38f9a-0790-4ac6-b754-1d5608dcafc2.jpg"><img src="images/fotos/bdc38f9a-0790-4ac6-b754-1d5608dcafc2.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 32" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/c5e82457-195c-4983-bcb8-6c4874620e89.jpg"><img src="images/fotos/c5e82457-195c-4983-bcb8-6c4874620e89.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 33" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/e04392db-999d-4a90-a662-9a6de183447d.jpg"><img src="images/fotos/e04392db-999d-4a90-a662-9a6de183447d.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 34" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/f97122a8-9968-49de-be90-d37e7b2c1105.jpg"><img src="images/fotos/f97122a8-9968-49de-be90-d37e7b2c1105.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 35" loading="lazy"></div>
+    <div class="gallery-item" data-src="images/fotos/fea1d490-818c-485f-bb51-c2ea6ac08651.jpg"><img src="images/fotos/fea1d490-818c-485f-bb51-c2ea6ac08651.jpg" alt="Allora — Wijn &amp; Foodbar Geel, sfeerbeeld 36" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Fotoweergave">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Sluiten">✕</button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Vorige foto">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Volgende foto">›</button>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col"><img class="footer-logo" src="images/logo-icoon.png" alt="Allora"></div>
+      <div class="footer-col">
+        <h4>Allora</h4>
+        <p>Markt 14<br>2440 Geel</p>
+        <p><a href="tel:0469431003">0469 43 10 03</a></p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/allora.geel" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13-.67-.66-1.34-1.07-2.13-1.38-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-10.4a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61576335521715" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07c0 6.03 4.39 11.03 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.25h3.32l-.53 3.49h-2.79v8.44C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col footer-uren"><h4>Openingsuren</h4><span>Vrijdag – Zaterdag: 11:00 – 00:00</span><span>Zondag – Dinsdag: 11:00 – 23:00</span><span>Woensdag &amp; donderdag: gesloten</span></div>
+    </div>
+    <p class="footer-copy">© 2026 Allora — Wijn &amp; Foodbar</p>
+  </div>
+</footer>
+
+<script>
+const header=document.getElementById('siteHeader');
+const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>80);
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+const toggle=document.getElementById('navToggle'),links=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>{const open=links.classList.toggle('open');toggle.classList.toggle('open',open);toggle.setAttribute('aria-expanded',open);});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');toggle.classList.remove('open');toggle.setAttribute('aria-expanded',false);}));
+
+/* ===== LIGHTBOX (pure JS, alleen echte foto's) ===== */
+const items=Array.from(document.querySelectorAll('.gallery-item'));
+const sources=items.map(it=>it.getAttribute('data-src'));
+const lb=document.getElementById('lightbox'),lbImg=document.getElementById('lbImg');
+let current=0;
+function altFor(i){const im=items[i].querySelector('img');return im?im.alt:(items[i].getAttribute('data-alt')||'');}
+function openLb(i){current=i;lbImg.src=sources[current];lbImg.alt=altFor(current);lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){lb.classList.remove('open');document.body.style.overflow='';}
+function step(d){current=(current+d+sources.length)%sources.length;lbImg.src=sources[current];lbImg.alt=altFor(current);}
+items.forEach((it,i)=>it.addEventListener('click',()=>openLb(i)));
+document.getElementById('lbClose').addEventListener('click',closeLb);
+document.getElementById('lbPrev').addEventListener('click',e=>{e.stopPropagation();step(-1);});
+document.getElementById('lbNext').addEventListener('click',e=>{e.stopPropagation();step(1);});
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb();});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1);});
+
+/* ===== LIVE OPEN/GESLOTEN INDICATOR ===== */
+(function(){
+  const el=document.getElementById('navStatus');if(!el)return;
+  const txt=el.querySelector('.status-text');
+  const sched={0:[660,1380],1:[660,1380],2:[660,1380],3:null,4:null,5:[660,1440],6:[660,1440]};
+  const days={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+  function fmt(mins){if(mins>=1440)return 'middernacht';const hh=Math.floor(mins/60),mm=mins%60;return (hh<10?'0'+hh:hh)+':'+(mm<10?'0'+mm:mm);}
+  function update(){
+    const p=new Intl.DateTimeFormat('en-US',{timeZone:'Europe/Brussels',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+    const m={};p.forEach(x=>m[x.type]=x.value);
+    const day=days[m.weekday];
+    let h=parseInt(m.hour,10);if(h===24)h=0;
+    const cur=h*60+parseInt(m.minute,10);
+    const s=sched[day];
+    if(s&&cur>=s[0]&&cur<s[1]){
+      el.className='nav-status open';
+      txt.textContent='Nu open tot '+fmt(s[1]);
+    }else{
+      el.className='nav-status closed';
+      if(day===3||day===4){
+        txt.textContent='Gesloten vandaag';
+      }else{
+        let openMin;
+        if(s&&cur<s[0]){openMin=s[0];}
+        else{for(let i=1;i<=7;i++){const nd=(day+i)%7;if(sched[nd]){openMin=sched[nd][0];break;}}}
+        txt.textContent='Gesloten · open om '+fmt(openMin);
+      }
+    }
+  }
+  update();setInterval(update,30000);
+})();
+</script>
+</body>
+</html>
