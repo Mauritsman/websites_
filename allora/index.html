@@ -10,6 +10,7 @@
 <meta property="og:type" content="restaurant">
 <meta property="og:locale" content="nl_BE">
 <link rel="icon" type="image/png" href="images/logo-icoon.png">
+<link rel="preload" as="image" href="images/Foppolo_landscape.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +57,7 @@ a{color:inherit;}
 .nav-links a{font-size:.9rem;letter-spacing:.04em;text-decoration:none;color:var(--text);transition:color .2s;white-space:nowrap;}
 .nav-links a:hover{color:var(--gold);}
 .nav-links a.active{color:var(--gold);}
-.nav-wa{display:inline-flex !important;align-items:center;gap:.45rem;background:var(--red);color:#fff !important;padding:.5rem 1.1rem;border-radius:3px;font-weight:600;}
+.nav-wa{display:inline-flex !important;align-items:center;gap:.45rem;background:var(--red);color:#fff !important;padding:.5rem 1.1rem;border-radius:3px;font-weight:600;text-decoration:none !important;}
 .nav-wa:hover{background:var(--red-hover);color:#fff !important;}
 .nav-wa svg{width:16px;height:16px;}
 .nav-actions{display:flex;align-items:center;gap:.75rem;}
@@ -96,10 +97,10 @@ a{color:inherit;}
 
 /* ===== HERO ===== */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:url('images/Foppolo_landscape.png') center/cover no-repeat;}
+.hero-bg{position:absolute;inset:0;background:url('images/Foppolo_landscape.png') center/cover no-repeat;background-image:url('images/Foppolo_landscape.png');background-size:cover;background-position:center;}
 .hero-bg::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,.55);}
 .hero-inner{position:relative;z-index:2;max-width:780px;padding:7rem 1.5rem 3rem;}
-.hero-logo{height:120px;width:auto;margin:0 auto 1.75rem;filter:brightness(0) invert(1);}
+.hero-logo{height:160px;width:auto;margin:0 auto 1.75rem;filter:brightness(0) invert(1);}
 .hero h1{font-family:var(--ff-serif);font-weight:500;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1.15;margin-bottom:1.25rem;}
 .hero h1 em{display:block;font-style:italic;color:var(--gold);}
 .hero-sub{font-size:clamp(1rem,2vw,1.15rem);color:#e8e0d0;max-width:560px;margin:0 auto 2.5rem;}
@@ -200,7 +201,7 @@ section{padding:5.5rem 1.25rem;}
 <section class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-inner">
-    <img class="hero-logo" src="images/logo-tekst.png" alt="Allora — Wijn & Foodbar">
+    <img class="hero-logo" src="images/logo-tekst.png" alt="Allora — Wijn & Foodbar" fetchpriority="high">
     <h1>Proef en geniet —<em>een stukje Italië in Geel.</em></h1>
     <p class="hero-sub">Authentieke smaken uit Bergamo en Valtellina. Geen pizza's. Wel het echte verhaal.</p>
     <div class="hero-ctas">
